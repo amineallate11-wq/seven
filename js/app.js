@@ -1,27 +1,23 @@
 /**
- * SEVEN SCRUBS — STORE CONTROLLER
- * E-commerce pyjamas de bloc chirurgicaux
- * Gestion catalogue, sélecteur de taille, panier et checkout WhatsApp direct
+ * SEVEN SCRUBS — STORE CONTROLLER (Mobile-First)
+ * Conception épurée, ultra-rapide et optimisée smartphone
  */
 
 const SEVEN_STORE = (() => {
-  // Constants
   const WHATSAPP_PHONE = '212698040572'; // +212 6.98.04.05.72
   const STORE_CURRENCY = 'DH';
 
-  // Products Data
+  // Products Data with the user's authentic cutouts
   const products = {
     women: {
-      id: 'seven-women-olive',
-      name: 'Pyjama de Bloc SEVEN 7 — Édition Olive & Orange',
+      id: 'seven-women',
+      name: 'Pyjama de Bloc Femme — Vert Olive & Orange',
       gender: 'Femme',
-      colorName: 'Vert Olive / Émeraude Chirurgical',
-      accentColor: 'Orange Électrique (Cordons)',
+      tag: 'Vert Olive & Orange',
       price: 590,
       oldPrice: 790,
-      defaultSize: 'M',
       selectedSize: 'M',
-      badge: 'Bestseller Bloc',
+      selectedImage: './images/women/model-front.png',
       images: [
         { label: 'Porté Face', src: './images/women/model-front.png' },
         { label: 'Porté Dos', src: './images/women/model-back.png' },
@@ -31,144 +27,174 @@ const SEVEN_STORE = (() => {
       ]
     },
     men: {
-      id: 'seven-men-black',
-      name: 'Pyjama de Bloc SEVEN 7 — Édition Black & White',
+      id: 'seven-men',
+      name: 'Pyjama de Bloc Homme — Noir & Blanc',
       gender: 'Homme',
-      colorName: 'Noir Onyx Profond',
-      accentColor: 'Blanc Craie (Cordons & Broderie)',
+      tag: 'Noir & Blanc',
       price: 590,
       oldPrice: 790,
-      defaultSize: 'L',
       selectedSize: 'L',
-      badge: 'Streetwear Bloc',
+      selectedImage: './images/men/model-front.png',
       images: [
-        { label: 'Porté Complet', src: './images/men/model-clean.png' },
-        { label: 'Ensemble Cargo', src: './images/men/scrub-set.png' },
-        { label: 'Poche Poitrine', src: './images/men/detail-chest.png' },
-        { label: 'Poche Cargo', src: './images/men/detail-cargo.png' },
-        { label: 'Tissu Sergé', src: './images/men/detail-fabric.png' }
+        { label: 'Porté Face', src: './images/men/model-front.png' },
+        { label: 'Porté Dos', src: './images/men/model-back.png' },
+        { label: 'Ensemble Face', src: './images/men/scrub-front.png' },
+        { label: 'Ensemble Dos', src: './images/men/scrub-back.png' },
+        { label: 'Lifestyle Maroc', src: './images/men/model-lifestyle.jpg' }
       ]
     }
   };
 
-  // Cart State (Persisted in localStorage)
   let cart = [];
   try {
-    const saved = localStorage.getItem('seven_cart');
+    const saved = localStorage.getItem('seven_cart_v2');
     if (saved) cart = JSON.parse(saved);
   } catch (e) {
     cart = [];
   }
 
-  // DOM Elements Cache
-  const els = {
-    header: document.querySelector('.site-header'),
-    cartCount: document.querySelectorAll('.cart-count-badge'),
-    cartDrawer: document.getElementById('cartDrawerOverlay'),
-    cartItemsList: document.getElementById('cartItemsList'),
-    cartTotalPrice: document.getElementById('cartTotalPrice'),
-    sizeModal: document.getElementById('sizeModalOverlay'),
-    orderModal: document.getElementById('orderModalOverlay'),
-    toast: document.getElementById('toastNotice'),
-    quickOrderForm: document.getElementById('quickOrderForm'),
-    directOrderForm: document.getElementById('directOrderForm')
-  };
+  // Active filter: 'all', 'women', 'men'
+  let currentFilter = 'all';
 
-  // Initialize
   function init() {
-    setupScrollHeader();
-    setupGalleryThumbnails();
-    setupSizeSelectors();
-    setupFilterTabs();
-    setupCartEvents();
+    setupFilterNav();
+    setupGallerySwitchers();
+    setupSizePills();
+    setupCartDrawer();
     setupModals();
-    setupForms();
+    setupStickyBottomBar();
     renderCart();
   }
 
-  // Header scroll shadow
-  function setupScrollHeader() {
+  // Sticky bottom bar on mobile
+  function setupStickyBottomBar() {
+    const stickyBar = document.getElementById('mobileStickyBar');
+    if (!stickyBar) return;
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        els.header?.classList.add('scrolled');
+      // Show when scrolled past hero (approx 350px)
+      if (window.scrollY > 300) {
+        stickyBar.classList.add('visible');
       } else {
-        els.header?.classList.remove('scrolled');
+        stickyBar.classList.remove('visible');
       }
     }, { passive: true });
   }
 
-  // Multi-angle Gallery Thumbnails switcher
-  function setupGalleryThumbnails() {
-    document.querySelectorAll('.product-thumbs-strip').forEach(strip => {
-      const targetMainId = strip.dataset.targetMain;
-      const mainImg = document.getElementById(targetMainId);
-      const thumbs = strip.querySelectorAll('.thumb-item');
+  // Filter tabs (Tous / Femme / Homme)
+  function setupFilterNav() {
+    const pills = document.querySelectorAll('.category-pill');
+    const cards = document.querySelectorAll('.product-mobile-card');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const filter = pill.dataset.filter;
+        currentFilter = filter;
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.gender === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update sticky bar product reference if specific
+        updateStickyBarAction();
+      });
+    });
+  }
+
+  function updateStickyBarAction() {
+    const stickyBtn = document.getElementById('stickyWhatsAppBtn');
+    if (!stickyBtn) return;
+
+    if (currentFilter === 'women') {
+      stickyBtn.onclick = () => orderWhatsApp('women');
+      stickyBtn.innerHTML = `<span>💬 Commander Femme (Olive & Orange) • 590 DH</span>`;
+    } else if (currentFilter === 'men') {
+      stickyBtn.onclick = () => orderWhatsApp('men');
+      stickyBtn.innerHTML = `<span>💬 Commander Homme (Noir & Blanc) • 590 DH</span>`;
+    } else {
+      stickyBtn.onclick = () => {
+        // Scroll to boutique or open WhatsApp
+        const boutique = document.getElementById('catalogue');
+        if (boutique) {
+          boutique.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          openWhatsAppGeneral();
+        }
+      };
+      stickyBtn.innerHTML = `<span>💬 Commander sur WhatsApp • 590 DH</span>`;
+    }
+  }
+
+  // Gallery image switchers
+  function setupGallerySwitchers() {
+    ['women', 'men'].forEach(key => {
+      const thumbs = document.querySelectorAll(`.thumb-btn[data-product="${key}"]`);
+      const mainImg = document.getElementById(`mainImg-${key}`);
 
       thumbs.forEach(thumb => {
         thumb.addEventListener('click', () => {
           thumbs.forEach(t => t.classList.remove('active'));
           thumb.classList.add('active');
 
-          const newSrc = thumb.dataset.imgSrc;
+          const newSrc = thumb.dataset.src;
           if (mainImg && newSrc) {
             mainImg.style.opacity = '0.3';
-            mainImg.style.transform = 'scale(0.96)';
             setTimeout(() => {
               mainImg.src = newSrc;
               mainImg.style.opacity = '1';
-              mainImg.style.transform = 'scale(1)';
-            }, 150);
+              products[key].selectedImage = newSrc;
+            }, 120);
           }
         });
       });
     });
   }
 
-  // Size buttons selector
-  function setupSizeSelectors() {
-    document.querySelectorAll('.size-buttons-group').forEach(group => {
-      const prodKey = group.dataset.product;
-      const btns = group.querySelectorAll('.size-btn');
-
-      btns.forEach(btn => {
+  // Size pills
+  function setupSizePills() {
+    ['women', 'men'].forEach(key => {
+      const sizeBtns = document.querySelectorAll(`.size-pill[data-product="${key}"]`);
+      sizeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          btns.forEach(b => b.classList.remove('active'));
+          sizeBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const size = btn.dataset.size;
-          if (products[prodKey]) {
-            products[prodKey].selectedSize = size;
-            showToast(`Taille ${size} sélectionnée pour ${products[prodKey].gender}`);
-          }
+          products[key].selectedSize = size;
+          showToast(`Taille ${size} sélectionnée (${products[key].gender})`);
         });
       });
     });
   }
 
-  // Category filter tabs
-  function setupFilterTabs() {
-    const tabs = document.querySelectorAll('.filter-tab');
-    const cards = document.querySelectorAll('.product-card');
+  // Direct WhatsApp order for 1 product
+  function orderWhatsApp(key) {
+    const prod = products[key];
+    if (!prod) return;
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+    const message = `Bonjour SEVEN, je souhaite commander :
+- Modèle : ${prod.name}
+- Couleurs : ${prod.tag}
+- Taille : ${prod.selectedSize}
+- Quantité : 1
+- Prix : ${prod.price} ${STORE_CURRENCY}
+- Mode : Paiement à la livraison au Maroc
 
-        const filter = tab.dataset.filter;
-        cards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
+Merci de me confirmer la commande et la livraison !`;
+
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   }
 
-  // Cart operations
-  function addToCart(prodKey) {
-    const prod = products[prodKey];
+  // Add to cart
+  function addToCart(key) {
+    const prod = products[key];
     if (!prod) return;
 
     const existingIndex = cart.findIndex(
@@ -182,10 +208,10 @@ const SEVEN_STORE = (() => {
         id: prod.id,
         name: prod.name,
         gender: prod.gender,
-        color: prod.colorName,
+        tag: prod.tag,
         size: prod.selectedSize,
         price: prod.price,
-        image: prod.images[0].src,
+        image: prod.selectedImage || prod.images[0].src,
         qty: 1
       });
     }
@@ -208,277 +234,165 @@ const SEVEN_STORE = (() => {
 
   function removeFromCart(index) {
     if (!cart[index]) return;
-    const removedName = cart[index].name;
+    const name = cart[index].name;
     cart.splice(index, 1);
     saveCart();
     renderCart();
-    showToast(`${removedName} retiré du panier`);
+    showToast(`${name} retiré`);
   }
 
   function saveCart() {
     try {
-      localStorage.setItem('seven_cart', JSON.stringify(cart));
+      localStorage.setItem('seven_cart_v2', JSON.stringify(cart));
     } catch (e) {}
   }
 
   function renderCart() {
-    const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
-    const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+    const totalCount = cart.reduce((acc, i) => acc + i.qty, 0);
+    const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
 
-    // Update Badges
-    els.cartCount.forEach(badge => {
-      badge.textContent = totalCount;
-      badge.style.display = totalCount > 0 ? 'flex' : 'none';
+    document.querySelectorAll('.cart-counter').forEach(el => {
+      el.textContent = totalCount;
+      el.style.display = totalCount > 0 ? 'inline-flex' : 'none';
     });
 
-    // Update Total Price
-    if (els.cartTotalPrice) {
-      els.cartTotalPrice.textContent = `${totalPrice} ${STORE_CURRENCY}`;
-    }
+    const totalEl = document.getElementById('cartTotalDisplay');
+    if (totalEl) totalEl.textContent = `${totalPrice} ${STORE_CURRENCY}`;
 
-    // Render Items
-    if (!els.cartItemsList) return;
+    const listEl = document.getElementById('cartItemsList');
+    if (!listEl) return;
 
     if (cart.length === 0) {
-      els.cartItemsList.innerHTML = `
-        <div class="cart-empty-state">
-          <div class="cart-empty-icon">🛍️</div>
-          <p style="font-weight:700; color:#fff; margin-bottom:0.5rem;">Votre panier est vide</p>
-          <p style="font-size:0.85rem;">Sélectionnez votre tenue de bloc et commandez directement sur WhatsApp.</p>
+      listEl.innerHTML = `
+        <div style="text-align:center; padding:3rem 1rem; color:var(--text-muted);">
+          <div style="font-size:2.5rem; margin-bottom:0.75rem;">🛍️</div>
+          <p style="font-weight:700; color:#fff; margin-bottom:0.25rem;">Votre panier est vide</p>
+          <p style="font-size:0.85rem;">Sélectionnez votre tenue et commandez sur WhatsApp.</p>
         </div>
       `;
       return;
     }
 
-    els.cartItemsList.innerHTML = cart.map((item, index) => `
-      <div class="cart-item">
-        <div class="cart-item-img">
+    listEl.innerHTML = cart.map((item, idx) => `
+      <div class="cart-row">
+        <div class="cart-row-thumb">
           <img src="${item.image}" alt="${item.name}">
         </div>
-        <div class="cart-item-details">
-          <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-specs">Taille : <strong>${item.size}</strong> | ${item.color}</div>
-          <div class="cart-item-price-row">
-            <span class="cart-item-price">${item.price * item.qty} ${STORE_CURRENCY}</span>
-            <div class="cart-item-qty">
-              <button class="qty-btn" onclick="SEVEN_STORE.updateQty(${index}, -1)" aria-label="Diminuer">-</button>
-              <span class="qty-val">${item.qty}</span>
-              <button class="qty-btn" onclick="SEVEN_STORE.updateQty(${index}, 1)" aria-label="Augmenter">+</button>
+        <div class="cart-row-info">
+          <div class="cart-row-title">${item.name}</div>
+          <div class="cart-row-sub">Taille : <strong>${item.size}</strong> • ${item.tag}</div>
+          <div class="cart-row-bottom">
+            <span class="cart-row-price">${item.price * item.qty} ${STORE_CURRENCY}</span>
+            <div class="cart-qty-ctrl">
+              <button onclick="SEVEN_STORE.updateQty(${idx}, -1)">-</button>
+              <span>${item.qty}</span>
+              <button onclick="SEVEN_STORE.updateQty(${idx}, 1)">+</button>
             </div>
           </div>
         </div>
-        <button class="cart-item-delete" onclick="SEVEN_STORE.removeFromCart(${index})" title="Supprimer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18m-2 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-        </button>
+        <button class="cart-del-btn" onclick="SEVEN_STORE.removeFromCart(${idx})" title="Supprimer">✕</button>
       </div>
     `).join('');
   }
 
-  // Cart Drawer Events
-  function setupCartEvents() {
-    document.querySelectorAll('.cart-toggle-btn').forEach(btn => {
-      btn.addEventListener('click', openCart);
-    });
-
-    const closeBtn = document.getElementById('cartCloseBtn');
-    closeBtn?.addEventListener('click', closeCart);
-
-    els.cartDrawer?.addEventListener('click', (e) => {
-      if (e.target === els.cartDrawer) closeCart();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeCart();
-        closeModals();
-      }
+  // Cart Drawer
+  function setupCartDrawer() {
+    document.querySelectorAll('.open-cart-btn').forEach(b => b.addEventListener('click', openCart));
+    document.getElementById('closeCartBtn')?.addEventListener('click', closeCart);
+    document.getElementById('cartOverlay')?.addEventListener('click', (e) => {
+      if (e.target.id === 'cartOverlay') closeCart();
     });
   }
 
   function openCart() {
-    els.cartDrawer?.classList.add('open');
+    document.getElementById('cartOverlay')?.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeCart() {
-    els.cartDrawer?.classList.remove('open');
+    document.getElementById('cartOverlay')?.classList.remove('active');
     document.body.style.overflow = '';
-  }
-
-  // WhatsApp Order Generator
-  function orderSingleWhatsApp(prodKey) {
-    const prod = products[prodKey];
-    if (!prod) return;
-
-    const message = `Bonjour SEVEN, je souhaite commander un pyjama de bloc :
-- Produit : ${prod.name}
-- Modèle : ${prod.gender} (${prod.colorName} / ${prod.accentColor})
-- Taille souhaitée : ${prod.selectedSize}
-- Quantité : 1
-- Prix : ${prod.price} ${STORE_CURRENCY}
-
-Merci de me confirmer la disponibilité et le délai de livraison !`;
-
-    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
   }
 
   function orderCartWhatsApp() {
     if (cart.length === 0) {
-      showToast('Votre panier est vide. Veuillez ajouter un article.');
+      showToast('Votre panier est vide !');
       return;
     }
 
-    const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    const itemsText = cart.map(item => 
-      `• ${item.name} | Taille: ${item.size} | Qté: ${item.qty} (${item.price * item.qty} ${STORE_CURRENCY})`
-    ).join('\n');
+    const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+    const items = cart.map(i => `• ${i.name} (Taille ${i.size}) x${i.qty} = ${i.price * i.qty} DH`).join('\n');
 
-    const message = `Bonjour l'équipe SEVEN 7, je souhaite valider ma commande :
+    const message = `Bonjour SEVEN, je valide ma commande :
 
-${itemsText}
+${items}
 
-💰 Total commande : ${totalPrice} ${STORE_CURRENCY}
-📦 Mode de paiement : Paiement à la livraison (Cash on Delivery)
+💰 Total : ${totalPrice} ${STORE_CURRENCY}
+📦 Paiement : À la livraison
 
 Mes coordonnées de livraison :
-- Nom complet : 
-- Ville : 
+- Nom : 
 - Téléphone : 
-- Adresse complète : 
-
-Merci de m'indiquer le créneau d'expédition !`;
+- Ville : 
+- Adresse / Clinique : `;
 
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }
 
-  // General WhatsApp Support Message
-  function openGeneralWhatsApp() {
-    const message = `Bonjour SEVEN, j'aimerais avoir des renseignements sur vos pyjamas de bloc chirurgicaux (tailles, finitions, commande).`;
+  // General WhatsApp
+  function openWhatsAppGeneral() {
+    const message = `Bonjour SEVEN, j'aimerais avoir des informations sur vos pyjamas de bloc (tailles, finitions, commande).`;
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }
 
-  // Modals Setup
+  // Sizing Modal
   function setupModals() {
-    // Size guide triggers
-    document.querySelectorAll('.open-size-guide').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    document.querySelectorAll('.open-sizes-modal').forEach(b => {
+      b.addEventListener('click', (e) => {
         e.preventDefault();
-        els.sizeModal?.classList.add('open');
+        document.getElementById('sizesModal')?.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
     });
 
-    // Close buttons
-    document.querySelectorAll('.modal-close-btn').forEach(btn => {
-      btn.addEventListener('click', closeModals);
+    document.querySelectorAll('.close-modal-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.app-modal').forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = '';
+      });
     });
 
-    [els.sizeModal, els.orderModal].forEach(overlay => {
-      overlay?.addEventListener('click', (e) => {
-        if (e.target === overlay) closeModals();
+    document.querySelectorAll('.app-modal').forEach(m => {
+      m.addEventListener('click', (e) => {
+        if (e.target === m) {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
     });
   }
 
-  function closeModals() {
-    els.sizeModal?.classList.remove('open');
-    els.orderModal?.classList.remove('open');
-    document.body.style.overflow = '';
+  function showToast(msg) {
+    const toast = document.getElementById('mobileToast');
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2800);
   }
 
-  // Direct COD Order Modal
-  function openDirectOrderModal() {
-    if (cart.length === 0) {
-      showToast('Votre panier est vide !');
-      return;
-    }
-    closeCart();
-    els.orderModal?.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  // Forms setup
-  function setupForms() {
-    // Quick Interactive Order in Contact section
-    els.quickOrderForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const model = document.getElementById('quickModelSelect')?.value;
-      const size = document.getElementById('quickSizeSelect')?.value;
-      const qty = document.getElementById('quickQtyInput')?.value || 1;
-      const name = document.getElementById('quickNameInput')?.value || '';
-      const city = document.getElementById('quickCityInput')?.value || '';
-
-      const message = `Bonjour SEVEN, je passe une commande express :
-- Modèle : ${model}
-- Taille : ${size}
-- Quantité : ${qty}
-- Nom : ${name}
-- Ville : ${city}
-- Paiement : À la livraison
-
-Merci de me recontacter pour valider l'envoi !`;
-
-      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-      showToast('Redirection vers WhatsApp...');
-    });
-
-    // Modal Express Checkout Form
-    els.directOrderForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('modalName')?.value;
-      const phone = document.getElementById('modalPhone')?.value;
-      const city = document.getElementById('modalCity')?.value;
-      const address = document.getElementById('modalAddress')?.value;
-
-      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-      const itemsText = cart.map(i => `${i.name} (Taille ${i.size}) x${i.qty}`).join(', ');
-
-      const message = `Bonjour SEVEN, voici ma commande confirmée :
-- Articles : ${itemsText}
-- Total : ${totalPrice} ${STORE_CURRENCY}
-- Client : ${name}
-- Tél : ${phone}
-- Ville : ${city}
-- Adresse : ${address}
-- Paiement : Cash à la livraison
-
-Merci de valider l'expédition !`;
-
-      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-      closeModals();
-      cart = [];
-      saveCart();
-      renderCart();
-      showToast('✓ Commande envoyée avec succès sur WhatsApp !');
-    });
-  }
-
-  // Toast feedback
-  function showToast(text) {
-    if (!els.toast) return;
-    els.toast.textContent = text;
-    els.toast.classList.add('show', 'toast-success');
-    clearTimeout(els.toastTimeout);
-    els.toastTimeout = setTimeout(() => {
-      els.toast.classList.remove('show');
-    }, 3200);
-  }
-
-  // Public API
   return {
     init,
+    orderWhatsApp,
+    orderCartWhatsApp,
+    openWhatsAppGeneral,
     addToCart,
     updateQty,
     removeFromCart,
-    orderSingleWhatsApp,
-    orderCartWhatsApp,
-    openGeneralWhatsApp,
-    openDirectOrderModal,
     openCart,
     closeCart,
     showToast
