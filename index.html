@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEVEN — Pyjamas de Bloc Médicaux Haut de Gamme | Black & Olive Orange</title>
+  <meta name="description" content="Boutique officielle SEVEN : pyjamas de bloc chirurgicaux en sergé lycra haut de gamme. Homme (Noir & Blanc) et Femme (Vert Olive & Orange). Commande directe via WhatsApp avec livraison partout au Maroc.">
+  <link rel="icon" type="image/svg+xml" href="./images/brand/logo.svg">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>✨ NOUVELLE COLLECTION BLOC 2026</span>
+    <span>•</span>
+    <span>LIVRAISON 24H/48H PARTOUT AU MAROC</span>
+    <span>•</span>
+    <span>PAIEMENT À LA LIVRAISON</span>
+    <span>•</span>
+    <span>WHATSAPP DIRECT : +212 6.98.04.05.72</span>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#accueil" class="brand-link" aria-label="Accueil SEVEN">
+        <img src="./images/brand/logo.svg" alt="SEVEN Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">seven <span class="brand-seven-badge">7</span></span>
+          <span class="brand-tagline">SURGICAL WEAR</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+          <li><a href="#boutique" class="nav-link">Boutique</a></li>
+          <li><a href="#femme" class="nav-link" onclick="SEVEN_STORE.showToast('Gamme Femme : Vert Olive & Orange')">Femme (Olive & Orange)</a></li>
+          <li><a href="#homme" class="nav-link" onclick="SEVEN_STORE.showToast('Gamme Homme : Noir & Blanc')">Homme (Noir & Blanc)</a></li>
+          <li><a href="#" class="nav-link open-size-guide">Guide des Tailles</a></li>
+          <li><a href="#contact" class="nav-link">WhatsApp Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="btn-header-whatsapp" title="Contacter sur WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="cart-toggle-btn" aria-label="Voir le panier">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count-badge" style="display:none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobile" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="accueil">
+    <div class="container">
+      <!-- Badges -->
+      <div class="hero-badge-wrap">
+        <span class="pill-badge pill-brand">✦ COLLECTION BLOC OPÉRATOIRE</span>
+        <span class="pill-badge pill-orange">SERGÉ LYCRA STRETCH HAUTE RÉSISTANCE</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-main-title">
+        Le Pyjama de Bloc Réinventé : <br>
+        <span class="gradient-text-olive">Vert Olive & Orange</span> pour Elle, <br>
+        <span class="gradient-text-orange">Noir & Blanc Pur</span> pour Lui.
+      </h1>
+
+      <p class="hero-subtitle">
+        Conçus par et pour le bloc opératoire. Tissu sergé lycra 4-way stretch respirant, coupe cargo 6 poches ergonomiques et finitions brodées Seven 7. Alliez l'élégance à la performance chirurgicale.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-cta-group">
+        <a href="#boutique" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/></svg>
+          Commander Votre Tenue
+        </a>
+        <button class="btn-whatsapp-cta" onclick="SEVEN_STORE.openGeneralWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+          Conseil & Commande WhatsApp
+        </button>
+        <button class="btn-secondary open-size-guide">
+          Guide des Tailles
+        </button>
+      </div>
+
+      <!-- Hero Visual Dual Split Showcase -->
+      <div class="hero-dual-showcase">
+        
+        <!-- Showcase Card 1 : FEMME (Vert Olive & Orange) -->
+        <div class="showcase-card showcase-women" id="femme">
+          <div class="showcase-img-wrap">
+            <img src="./images/women/model-front.png" alt="Modèle Femme Pyjama de bloc Vert Olive et Orange" fetchpriority="high">
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-gender-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="5"/><path d="M12 13v8m-4-3h8"/></svg>
+              Collection Femme
+            </span>
+            <h2 class="showcase-title">Olive & Electric Orange</h2>
+            <p class="showcase-desc">
+              Tunique col fendu V-notch chic, pantalon cargo fluide avec cordons de serrage orange vif énergique. Confort supérieur pour de longues heures d'intervention.
+            </p>
+            <div class="showcase-color-spec">
+              <div class="color-dot-pair">
+                <span class="color-dot" style="background:#0e5c55;" title="Vert Olive Chirurgical"></span>
+                <span class="color-dot" style="background:#ff5e13;" title="Orange Néon"></span>
+              </div>
+              <span class="color-spec-label">Vert Olive & Cordons Orange</span>
+            </div>
+            <a href="#boutique" class="btn-card-action" onclick="document.querySelector('.filter-tab[data-filter=\'women\']').click()">
+              Découvrir le modèle Femme →
+            </a>
+          </div>
+        </div>
+
+        <!-- Showcase Card 2 : HOMME (Noir & Blanc) -->
+        <div class="showcase-card showcase-men" id="homme">
+          <div class="showcase-img-wrap">
+            <img src="./images/men/model-clean.png" alt="Modèle Homme Pyjama de bloc Noir et Blanc" fetchpriority="high">
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-gender-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="10" cy="14" r="5"/><path d="M19 5l-5.4 5.4M19 5h-5m5 0v5"/></svg>
+              Collection Homme
+            </span>
+            <h2 class="showcase-title">Black & Crisp White</h2>
+            <p class="showcase-desc">
+              Allure streetwear structurée avec col polo tailleur, cordons blanc craie contrastés, pantalon multipoches cargo et broderie blanche Seven 7.
+            </p>
+            <div class="showcase-color-spec">
+              <div class="color-dot-pair">
+                <span class="color-dot" style="background:#111111;" title="Noir Onyx"></span>
+                <span class="color-dot" style="background:#ffffff;" title="Blanc Craie"></span>
+              </div>
+              <span class="color-spec-label">Noir Pur & Cordons Blancs</span>
+            </div>
+            <a href="#boutique" class="btn-card-action" onclick="document.querySelector('.filter-tab[data-filter=\'men\']').click()">
+              Découvrir le modèle Homme →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Strip -->
+  <section class="highlights-strip">
+    <div class="container">
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon">⚡</div>
+          <div>
+            <h3 class="highlight-title">Sergé Lycra 4-Way Stretch</h3>
+            <p class="highlight-desc">Matière stretch respirante, anti-froissement et ultra-résistante pour les gardes intenses.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🎽</div>
+          <div>
+            <h3 class="highlight-title">6 Poches Cargo Spéciales</h3>
+            <p class="highlight-desc">Emplacements calibrés pour stéthoscope, carnet, smartphone, ciseaux et stylos de bloc.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🧼</div>
+          <div>
+            <h3 class="highlight-title">Lavage Clinique à 60°C</h3>
+            <p class="highlight-desc">Fixation de couleur premium : zéro décoloration après des dizaines de désinfections.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🇲🇦</div>
+          <div>
+            <h3 class="highlight-title">Livraison Express au Maroc</h3>
+            <p class="highlight-desc">Expédition sous 24/48h. Paiement à la réception et échange de taille simple sous 7 jours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boutique Section -->
+  <section class="catalog-section" id="boutique">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag">CATALOGUE OFFICIEL SEVEN 7</span>
+        <h2 class="section-title">Sélectionnez Votre Pyjama de Bloc</h2>
+        <p class="section-subtitle">
+          Commandez directement via WhatsApp en 1 clic ou ajoutez à votre panier. Disponibilité immédiate en stock.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">Tous nos modèles</button>
+        <button class="filter-tab" data-filter="women">Collection Femme (Vert Olive & Orange)</button>
+        <button class="filter-tab" data-filter="men">Collection Homme (Noir & Blanc)</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid">
+
+        <!-- ================= PRODUCT 1 : FEMME (VERT OLIVE & ORANGE) ================= -->
+        <article class="product-card women-card" data-category="women" id="produit-femme">
+          
+          <!-- Gallery Box -->
+          <div class="product-gallery-box">
+            <div class="product-badges-top">
+              <span class="badge-tag tag-women">Collection Femme</span>
+              <span class="badge-tag tag-promo">-25% OFFRE BLOC</span>
+            </div>
+
+            <!-- Main Interactive View -->
+            <div class="product-main-view">
+              <img id="mainViewWomen" src="./images/women/model-front.png" alt="Pyjama de bloc Femme Vert Olive et Orange Seven 7" loading="lazy">
+            </div>
+
+            <!-- 5 Angle Thumbnails directly from photos -->
+            <div class="product-thumbs-strip" data-target-main="mainViewWomen">
+              <div class="thumb-item active" data-img-src="./images/women/model-front.png" title="Porté Face">
+                <img src="./images/women/model-front.png" alt="Porté face">
+              </div>
+              <div class="thumb-item" data-img-src="./images/women/model-back.png" title="Porté Dos">
+                <img src="./images/women/model-back.png" alt="Porté dos">
+              </div>
+              <div class="thumb-item" data-img-src="./images/women/scrub-front.png" title="Ensemble Face">
+                <img src="./images/women/scrub-front.png" alt="Ensemble face">
+              </div>
+              <div class="thumb-item" data-img-src="./images/women/scrub-back.png" title="Ensemble Dos">
+                <img src="./images/women/scrub-back.png" alt="Ensemble dos">
+              </div>
+              <div class="thumb-item" data-img-src="./images/women/scrub-side.png" title="Profil">
+                <img src="./images/women/scrub-side.png" alt="Profil complet">
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info-wrap">
+            <div class="product-category-row">
+              <span class="product-cat-label">Tenue Médicale Complète (Haut + Bas)</span>
+              <div class="product-rating">★★★★★ <span>(128 avis)</span></div>
+            </div>
+
+            <h3 class="product-card-title">Pyjama de Bloc SEVEN 7 — Femme Olive & Orange</h3>
+            
+            <p class="product-card-desc">
+              Conçu pour sublimer la silhouette tout en garantissant une liberté de geste totale au bloc. Col V-notch fendu chic, cordons de serrage orange éclatants et pantalon cargo multipoches.
+            </p>
+
+            <!-- Micro Specs -->
+            <div class="product-micro-specs">
+              <span class="micro-spec-chip">✨ Col V-Notch Fendu</span>
+              <span class="micro-spec-chip">🔥 Cordons Orange Contrastés</span>
+              <span class="micro-spec-chip">🛡️ 6 Poches Cargo</span>
+              <span class="micro-spec-chip">💎 Broderie Seven 7</span>
+            </div>
+
+            <!-- Color Palette Details -->
+            <div class="product-color-guide">
+              <div class="color-guide-left">
+                <div class="color-swatch-box">
+                  <span class="swatch-circle olive"></span>
+                  <span class="swatch-circle orange"></span>
+                </div>
+                <div class="color-details-txt">
+                  <span class="color-name-main">Vert Olive & Cordons Orange Électrique</span>
+                  <span class="color-name-sub">Harmonie dynamique & énergisante</span>
+                </div>
+              </div>
+              <span style="font-size:0.75rem; color:#22c55e; font-weight:700;">● En Stock</span>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="size-selector-wrap">
+              <div class="size-header-row">
+                <span class="size-label">Sélectionnez votre taille :</span>
+                <button type="button" class="size-guide-btn open-size-guide">Guide des tailles</button>
+              </div>
+              <div class="size-buttons-group" data-product="women">
+                <button type="button" class="size-btn" data-size="S">S</button>
+                <button type="button" class="size-btn active" data-size="M">M</button>
+                <button type="button" class="size-btn" data-size="L">L</button>
+                <button type="button" class="size-btn" data-size="XL">XL</button>
+              </div>
+            </div>
+
+            <!-- Pricing Row -->
+            <div class="product-pricing-row">
+              <span class="price-current">590 DH</span>
+              <span class="price-old">790 DH</span>
+              <span class="price-save-badge">ÉCONOMISEZ 200 DH</span>
+            </div>
+
+            <!-- Actions Stack -->
+            <div class="card-actions-stack">
+              <button type="button" class="btn-card-whatsapp" onclick="SEVEN_STORE.orderSingleWhatsApp('women')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+                Commander ce modèle sur WhatsApp
+              </button>
+              <button type="button" class="btn-card-add-cart" onclick="SEVEN_STORE.addToCart('women')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                Ajouter au Panier
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ================= PRODUCT 2 : HOMME (NOIR & BLANC) ================= -->
+        <article class="product-card men-card" data-category="men" id="produit-homme">
+          
+          <!-- Gallery Box -->
+          <div class="product-gallery-box">
+            <div class="product-badges-top">
+              <span class="badge-tag tag-men">Collection Homme</span>
+              <span class="badge-tag tag-promo">-25% OFFRE BLOC</span>
+            </div>
+
+            <!-- Main Interactive View -->
+            <div class="product-main-view">
+              <img id="mainViewMen" src="./images/men/model-clean.png" alt="Pyjama de bloc Homme Noir et Blanc Seven 7" loading="lazy">
+            </div>
+
+            <!-- 5 Angle Thumbnails directly from photos -->
+            <div class="product-thumbs-strip" data-target-main="mainViewMen">
+              <div class="thumb-item active" data-img-src="./images/men/model-clean.png" title="Porté Complet">
+                <img src="./images/men/model-clean.png" alt="Porté complet">
+              </div>
+              <div class="thumb-item" data-img-src="./images/men/scrub-set.png" title="Ensemble Cargo">
+                <img src="./images/men/scrub-set.png" alt="Ensemble cargo">
+              </div>
+              <div class="thumb-item" data-img-src="./images/men/detail-chest.png" title="Poche Poitrine">
+                <img src="./images/men/detail-chest.png" alt="Poche poitrine brodée">
+              </div>
+              <div class="thumb-item" data-img-src="./images/men/detail-cargo.png" title="Poche Cargo">
+                <img src="./images/men/detail-cargo.png" alt="Poche cargo utilitaire">
+              </div>
+              <div class="thumb-item" data-img-src="./images/men/detail-fabric.png" title="Matière Sergé">
+                <img src="./images/men/detail-fabric.png" alt="Texture tissu sergé lycra">
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info-wrap">
+            <div class="product-category-row">
+              <span class="product-cat-label">Tenue Médicale Complète (Haut + Bas)</span>
+              <div class="product-rating">★★★★★ <span>(146 avis)</span></div>
+            </div>
+
+            <h3 class="product-card-title">Pyjama de Bloc SEVEN 7 — Homme Black & White</h3>
+            
+            <p class="product-card-desc">
+              L'alliance d'un col polo chemise d'inspiration workwear et d'une coupe chirurgicale ergonomique. Tissu sergé lycra noir profond, cordons blancs craie contrastés et multipoches.
+            </p>
+
+            <!-- Micro Specs -->
+            <div class="product-micro-specs">
+              <span class="micro-spec-chip">👔 Col Polo Structuré</span>
+              <span class="micro-spec-chip">⚪ Cordons Blancs Craie</span>
+              <span class="micro-spec-chip">🛡️ 6 Poches Cargo</span>
+              <span class="micro-spec-chip">💎 Broderie Seven 7</span>
+            </div>
+
+            <!-- Color Palette Details -->
+            <div class="product-color-guide">
+              <div class="color-guide-left">
+                <div class="color-swatch-box">
+                  <span class="swatch-circle black"></span>
+                  <span class="swatch-circle white"></span>
+                </div>
+                <div class="color-details-txt">
+                  <span class="color-name-main">Noir Onyx Profond & Cordons Blancs</span>
+                  <span class="color-name-sub">Contraste minimaliste & autorité médicale</span>
+                </div>
+              </div>
+              <span style="font-size:0.75rem; color:#22c55e; font-weight:700;">● En Stock</span>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="size-selector-wrap">
+              <div class="size-header-row">
+                <span class="size-label">Sélectionnez votre taille :</span>
+                <button type="button" class="size-guide-btn open-size-guide">Guide des tailles</button>
+              </div>
+              <div class="size-buttons-group" data-product="men">
+                <button type="button" class="size-btn" data-size="S">S</button>
+                <button type="button" class="size-btn" data-size="M">M</button>
+                <button type="button" class="size-btn active" data-size="L">L</button>
+                <button type="button" class="size-btn" data-size="XL">XL</button>
+              </div>
+            </div>
+
+            <!-- Pricing Row -->
+            <div class="product-pricing-row">
+              <span class="price-current">590 DH</span>
+              <span class="price-old">790 DH</span>
+              <span class="price-save-badge">ÉCONOMISEZ 200 DH</span>
+            </div>
+
+            <!-- Actions Stack -->
+            <div class="card-actions-stack">
+              <button type="button" class="btn-card-whatsapp" onclick="SEVEN_STORE.orderSingleWhatsApp('men')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+                Commander ce modèle sur WhatsApp
+              </button>
+              <button type="button" class="btn-card-add-cart" onclick="SEVEN_STORE.addToCart('men')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                Ajouter au Panier
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Details & Craftsmanship Section ("Bases toi sur les photos") -->
+  <section class="craft-section" id="details">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SAVOIR-FAIRE & CONFECTION</span>
+        <h2 class="section-title">La Précision dans Chaque Couture</h2>
+        <p class="section-subtitle">
+          Directement inspiré des gros plans de nos tenues officielles : broderies de haute définition, poches cargo et tissu sergé haute performance.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+        <!-- Card 1 -->
+        <div class="craft-card">
+          <div class="craft-img-wrap">
+            <img src="./images/men/detail-chest.png" alt="Broderie poitrine Seven 7" loading="lazy">
+          </div>
+          <div class="craft-card-content">
+            <h4 class="craft-card-title">Signature Chest Branding</h4>
+            <p class="craft-card-text">Poche poitrine avec broderie cursive blanche Seven et blason géométrique 7 en contraste franc.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="craft-card">
+          <div class="craft-img-wrap">
+            <img src="./images/men/detail-cargo.png" alt="Poches cargo et cordons" loading="lazy">
+          </div>
+          <div class="craft-card-content">
+            <h4 class="craft-card-title">Cargo Utility & Cordons</h4>
+            <p class="craft-card-text">Ceinture élastique ultra-douce avec cordons plats renforcés et poches cargo à rabat anti-chute.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="craft-card">
+          <div class="craft-img-wrap">
+            <img src="./images/men/detail-fabric.png" alt="Tissu Serge Lycra" loading="lazy">
+          </div>
+          <div class="craft-card-content">
+            <h4 class="craft-card-title">Sergé Lycra Haute Qualité</h4>
+            <p class="craft-card-text">Armure sergée infroissable qui conserve sa tenue impeccable même après 24 heures de garde non-stop.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="craft-card">
+          <div class="craft-img-wrap">
+            <img src="./images/men/scrub-set.png" alt="Ensemble complet" loading="lazy">
+          </div>
+          <div class="craft-card-content">
+            <h4 class="craft-card-title">The Complete Set</h4>
+            <p class="craft-card-text">L'harmonie complète entre le haut structuré et le pantalon cargo pensé pour la morphologie du soignant.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Collar Banner -->
+      <div class="collar-quote-banner">
+        <div class="quote-left">
+          <div class="quote-motto">« Same shift. Same hero. Again. »</div>
+          <p class="quote-desc">
+            Chaque tenue Seven arbore cette signature exclusive à l'intérieur du col. Un rappel discret de votre engagement quotidien pour sauver des vies.
+          </p>
+        </div>
+        <div class="quote-collar-badge">
+          <img src="./images/brand/collar-inside-hero.png" alt="Détail col intérieur Seven">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WhatsApp Contact & Quick Order Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        
+        <!-- Left Column : Contact Details -->
+        <div class="contact-info-col">
+          <span class="section-tag">SERVICE CLIENT & COMMANDES</span>
+          <h2 class="contact-info-title">Passez Votre Commande en Direct sur WhatsApp</h2>
+          <p class="contact-info-text">
+            Notre équipe dédiée aux soignants est disponible 7j/7 pour vous conseiller sur le choix de vos tailles, gérer les commandes de service médical ou coordonner les livraisons urgentes au Maroc.
+          </p>
+
+          <div class="contact-channels-list">
+            
+            <div class="channel-row">
+              <div class="channel-icon-circle wa">💬</div>
+              <div class="channel-texts">
+                <span class="channel-label">WhatsApp Officiel (Maroc)</span>
+                <span class="channel-val">
+                  <a href="https://wa.me/212698040572" target="_blank" rel="noopener">+212 6.98.04.05.72</a>
+                </span>
+              </div>
+            </div>
+
+            <div class="channel-row">
+              <div class="channel-icon-circle ig">📸</div>
+              <div class="channel-texts">
+                <span class="channel-label">Instagram Officiel</span>
+                <span class="channel-val">
+                  <a href="https://instagram.com/sevenscrubs" target="_blank" rel="noopener">@sevenscrubs</a>
+                </span>
+              </div>
+            </div>
+
+            <div class="channel-row">
+              <div class="channel-icon-circle web">🌐</div>
+              <div class="channel-texts">
+                <span class="channel-label">Site Web Officiel</span>
+                <span class="channel-val">
+                  <a href="https://sevenscrubs.ma" target="_blank" rel="noopener">sevenscrubs.ma</a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="btn-whatsapp-cta" onclick="SEVEN_STORE.openGeneralWhatsApp()" style="width:100%; max-width:380px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+            Démarrer la discussion WhatsApp
+          </button>
+        </div>
+
+        <!-- Right Column : Interactive Quick Order Form -->
+        <div class="contact-interactive-card">
+          <h3 class="quick-order-title">Formulaire de Commande Express</h3>
+          <p class="quick-order-desc">Remplissez ces informations et nous générons instantanément votre commande prête à être expédiée.</p>
+
+          <form id="quickOrderForm">
+            <div class="quick-form-group">
+              <label class="quick-form-label" for="quickModelSelect">Modèle souhaité</label>
+              <select class="quick-form-select" id="quickModelSelect" required>
+                <option value="Pyjama Femme (Vert Olive & Orange) - 590 DH">Femme : Vert Olive & Orange (590 DH)</option>
+                <option value="Pyjama Homme (Noir & Blanc) - 590 DH">Homme : Noir & Blanc (590 DH)</option>
+                <option value="Pack Duo (1 Homme + 1 Femme) - 1100 DH">Pack Duo : 1 Homme + 1 Femme (1 100 DH)</option>
+              </select>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+              <div class="quick-form-group">
+                <label class="quick-form-label" for="quickSizeSelect">Taille</label>
+                <select class="quick-form-select" id="quickSizeSelect" required>
+                  <option value="S">Taille S</option>
+                  <option value="M" selected>Taille M</option>
+                  <option value="L">Taille L</option>
+                  <option value="XL">Taille XL</option>
+                </select>
+              </div>
+
+              <div class="quick-form-group">
+                <label class="quick-form-label" for="quickQtyInput">Quantité</label>
+                <input type="number" class="quick-form-input" id="quickQtyInput" value="1" min="1" max="10" required>
+              </div>
+            </div>
+
+            <div class="quick-form-group">
+              <label class="quick-form-label" for="quickNameInput">Nom complet</label>
+              <input type="text" class="quick-form-input" id="quickNameInput" placeholder="Dr. / Prénom & Nom" required>
+            </div>
+
+            <div class="quick-form-group">
+              <label class="quick-form-label" for="quickCityInput">Ville de livraison</label>
+              <input type="text" class="quick-form-input" id="quickCityInput" placeholder="Ex: Casablanca, Rabat, Marrakech..." required>
+            </div>
+
+            <button type="submit" class="btn-card-whatsapp" style="margin-top:1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+              Envoyer la commande via WhatsApp
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-over Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier de commande">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">
+          <span>🛍️ Votre Panier Seven</span>
+        </h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Fermer le panier">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="cart-items-container" id="cartItemsList">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Sous-total :</span>
+          <span class="cart-total-price" id="cartTotalPrice">0 DH</span>
+        </div>
+        
+        <button class="btn-cart-whatsapp-checkout" onclick="SEVEN_STORE.orderCartWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+          Commander le Panier sur WhatsApp
+        </button>
+
+        <button class="btn-cart-direct-checkout" onclick="SEVEN_STORE.openDirectOrderModal()">
+          Payer à la Livraison (Formulaire direct)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-overlay" id="sizeModalOverlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Guide des Tailles — Pyjamas de Bloc SEVEN 7</h3>
+        <button class="modal-close-btn" aria-label="Fermer le guide des tailles">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+          Nos pyjamas sont confectionnés en <strong>Sergé Lycra 4-Way Stretch</strong>. La coupe est ajustée et ergonomique. Si vous hésitez entre deux tailles, nous recommandons la taille supérieure pour une aisance maximale en salle d'opération.
+        </p>
+
+        <h4 style="font-size:0.95rem; font-weight:700; color:#fff; margin-top:1.25rem;">Tableau Homme (Noir & Blanc)</h4>
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Taille</th>
+              <th>Stature</th>
+              <th>Poitrine (cm)</th>
+              <th>Taille (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>S</strong></td><td>165 - 173 cm</td><td>88 - 94</td><td>76 - 82</td></tr>
+            <tr><td><strong>M</strong></td><td>172 - 180 cm</td><td>95 - 102</td><td>83 - 90</td></tr>
+            <tr><td><strong>L</strong></td><td>178 - 186 cm</td><td>103 - 110</td><td>91 - 98</td></tr>
+            <tr><td><strong>XL</strong></td><td>184 - 192 cm</td><td>111 - 120</td><td>99 - 108</td></tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size:0.95rem; font-weight:700; color:#fff; margin-top:1.5rem;">Tableau Femme (Vert Olive & Orange)</h4>
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Taille</th>
+              <th>Stature</th>
+              <th>Poitrine (cm)</th>
+              <th>Hanches (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>S</strong></td><td>156 - 165 cm</td><td>82 - 88</td><td>88 - 94</td></tr>
+            <tr><td><strong>M</strong></td><td>164 - 172 cm</td><td>89 - 96</td><td>95 - 102</td></tr>
+            <tr><td><strong>L</strong></td><td>170 - 178 cm</td><td>97 - 104</td><td>103 - 110</td></tr>
+            <tr><td><strong>XL</strong></td><td>175 - 182 cm</td><td>105 - 114</td><td>111 - 120</td></tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:1.5rem; text-align:center;">
+          <button class="btn-primary modal-close-btn" style="width:100%; border-radius:var(--radius-sm); height:2.75rem;">
+            J'ai compris, revenir à la boutique
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Direct COD Express Checkout Modal -->
+  <div class="modal-overlay" id="orderModalOverlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Finaliser la Commande (Paiement à la livraison)</h3>
+        <button class="modal-close-btn" aria-label="Fermer le formulaire">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">
+          Paiement en espèces ou virement à la réception de votre colis partout au Maroc.
+        </p>
+
+        <form id="directOrderForm">
+          <div class="quick-form-group">
+            <label class="quick-form-label" for="modalName">Nom et Prénom</label>
+            <input type="text" class="quick-form-input" id="modalName" placeholder="Dr. / Prénom Nom" required>
+          </div>
+
+          <div class="quick-form-group">
+            <label class="quick-form-label" for="modalPhone">Numéro de Téléphone (WhatsApp)</label>
+            <input type="tel" class="quick-form-input" id="modalPhone" placeholder="06XXXXXXXX ou +212..." required>
+          </div>
+
+          <div class="quick-form-group">
+            <label class="quick-form-label" for="modalCity">Ville</label>
+            <input type="text" class="quick-form-input" id="modalCity" placeholder="Casablanca, Rabat, Fès, Marrakech..." required>
+          </div>
+
+          <div class="quick-form-group">
+            <label class="quick-form-label" for="modalAddress">Adresse de livraison (Clinique, Hôpital ou Domicile)</label>
+            <input type="text" class="quick-form-input" id="modalAddress" placeholder="N°, Rue, Service ou Quartier" required>
+          </div>
+
+          <button type="submit" class="btn-card-whatsapp" style="margin-top:1.25rem; width:100%;">
+            Confirmer et Envoyer sur WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Floating WhatsApp Button -->
+  <aside class="floating-whatsapp" aria-label="Contact rapide WhatsApp">
+    <div class="floating-tooltip">💬 Commander sur WhatsApp</div>
+    <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="floating-whatsapp-btn" title="Discuter sur WhatsApp avec SEVEN">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/></svg>
+    </a>
+  </aside>
+
+  <!-- Toast Notification Feedback -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <div>
+          <a href="#accueil" class="brand-link" style="margin-bottom:0.75rem;">
+            <img src="./images/brand/logo.svg" alt="SEVEN" style="height:32px;">
+            <span class="brand-title" style="font-size:1.3rem;">seven <span class="brand-seven-badge">7</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            Vente en ligne de pyjamas de bloc chirurgicaux haut de gamme. Créé pour allier la rigueur clinique au confort et au style contemporain.
+          </p>
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:#fff; font-weight:700;">
+            « Same shift. Same hero. Again. »
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#boutique">Boutique</a></li>
+            <li><a href="#femme">Gamme Femme (Vert & Orange)</a></li>
+            <li><a href="#homme">Gamme Homme (Noir & Blanc)</a></li>
+            <li><a href="#" class="open-size-guide">Guide des Tailles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Commandes & Garanties</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#boutique">Paiement à la livraison</a></li>
+            <li><a href="#contact">Livraison 24h-48h Maroc</a></li>
+            <li><a href="#" class="open-size-guide">Échange de taille sous 7j</a></li>
+            <li><a href="https://wa.me/212698040572" target="_blank" rel="noopener">Suivi de commande WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact Officiel</h4>
+          <ul class="footer-nav-list">
+            <li><a href="https://wa.me/212698040572" target="_blank" rel="noopener">📱 WhatsApp : +212 6.98.04.05.72</a></li>
+            <li><a href="https://instagram.com/sevenscrubs" target="_blank" rel="noopener">📸 Instagram : @sevenscrubs</a></li>
+            <li><a href="https://sevenscrubs.ma" target="_blank" rel="noopener">🌐 Web : sevenscrubs.ma</a></li>
+            <li style="color:var(--text-dim); margin-top:0.5rem;">Expédition depuis Casablanca, Maroc</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 SEVEN SCRUBS. Tous droits réservés.</span>
+        <span>Conçu pour le corps médical et chirurgical d'élite.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
