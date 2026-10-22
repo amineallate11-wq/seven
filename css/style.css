@@ -72,14 +72,14 @@ body.app-stage-body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100%;
   min-height: 100vh;
-  background: radial-gradient(circle at 50% 28%, var(--backdrop-gold-light) 0%, var(--backdrop-gold-mid) 52%, var(--backdrop-gold-deep) 100%);
-  background-attachment: fixed;
+  min-height: 100dvh;
+  background-color: #f8f6f1;
   color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
-  padding: 1.5rem 0.75rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 button {
@@ -102,30 +102,28 @@ img {
   display: block;
 }
 
-/* ================= Desktop Luxury Presentation Frame ================= */
+/* ================= Presentation Wrapper (Fluid Mobile First) ================= */
 .luxury-presentation-wrap {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1200px;
-}
-
-/* ================= The Smartphone Canvas Card ================= */
-.mobile-app-card {
-  width: 100%;
-  max-width: 414px;
-  height: 850px;
-  max-height: 94vh;
-  background-color: var(--card-bg);
-  border-radius: var(--radius-phone);
-  box-shadow: var(--shadow-phone);
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
+  align-items: center;
+  background: #f8f6f1;
+}
+
+/* ================= The Native Mobile Canvas ================= */
+.mobile-app-card {
+  width: 100%;
+  max-width: 520px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #f8f6f1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 96px; /* Space for the sticky purchase bar */
 }
 
 /* ================= Luxury Announcement Strip (Clean, No Fake Phone Chrome) ================= */
@@ -356,15 +354,20 @@ img {
 }
 
 /* ================= Main Showcase Stage ================= */
-.product-showcase-stage {
+.mobile-store-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.product-showcase-stage {
   display: grid;
-  grid-template-columns: 82px 1fr;
-  padding: 0.6rem 1.1rem 0.4rem;
-  gap: 0.6rem;
+  grid-template-columns: 78px 1fr;
+  padding: 0.75rem 1rem 0.35rem;
+  gap: 0.65rem;
   position: relative;
-  overflow: hidden;
-  align-items: stretch;
+  align-items: center;
 }
 
 /* Left Vertical Thumbnails Rail */
@@ -577,15 +580,141 @@ img {
   pointer-events: none;
 }
 
-/* ================= Bottom Controls Section ================= */
-.app-bottom-controls {
-  background-color: var(--card-bg);
-  border-top: 1px solid var(--card-border);
-  padding: 0.75rem 1.25rem 1.2rem;
+/* ================= Product Details & Specs Section ================= */
+.product-info-section {
+  padding: 1.1rem 1.25rem 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
-  z-index: 8;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.03);
+  margin-top: 0.4rem;
+}
+
+/* Price & Discount Row */
+.product-price-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.price-val-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price-main-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #1c1a17;
+  letter-spacing: -0.02em;
+}
+
+.price-original-tag {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #9e978d;
+  text-decoration: line-through;
+}
+
+.price-badge-saving {
+  background: rgba(223, 159, 45, 0.15);
+  color: #b57a16;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.28rem 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(223, 159, 45, 0.3);
+}
+
+/* Trust Badges Grid */
+.mobile-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.trust-pill-item {
+  background: #f8f6f1;
+  border-radius: 12px;
+  padding: 0.55rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #4a453e;
+  line-height: 1.25;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.trust-emoji {
+  font-size: 0.9rem;
+}
+
+/* Specs Details Box */
+.mobile-specs-accordion {
+  background: #f8f6f1;
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-top: 0.2rem;
+}
+
+.specs-box-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.35rem;
+}
+
+.specs-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #df9f2d;
+}
+
+.specs-box-header h4 {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1c1a17;
+}
+
+.specs-desc {
+  font-size: 0.74rem;
+  color: #645e54;
+  line-height: 1.5;
+}
+
+/* ================= Sticky Bottom Purchase Bar ================= */
+.sticky-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background: rgba(248, 246, 241, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 0.75rem 1.15rem max(env(safe-area-inset-bottom), 0.85rem);
+  z-index: 80;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.07);
 }
 
 /* Title & Swatches Row */
@@ -810,14 +939,16 @@ img {
 
 /* ================= Slide-in Drawers ================= */
 .drawer-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(20, 16, 12, 0.5);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(18, 15, 12, 0.55);
   backdrop-filter: blur(6px);
-  z-index: 50;
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 150;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -1430,31 +1561,31 @@ img {
 }
 
 /* ================= Fully Responsive Native Mobile View ================= */
-/* ================= Fully Responsive Native Mobile View ================= */
 @media (max-width: 680px) {
   body.app-stage-body {
     padding: 0;
     margin: 0;
-    background: var(--card-bg);
+    background: #f8f6f1;
   }
 
   .luxury-presentation-wrap {
     width: 100%;
-    height: 100%;
     min-height: 100vh;
     min-height: 100dvh;
     padding: 0;
+    background: #f8f6f1;
   }
 
   .mobile-app-card {
     max-width: 100%;
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    max-height: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
     border-radius: 0;
     border: none;
     box-shadow: none;
+    padding-bottom: 96px;
   }
 
   /* Safe Area Insets for Notch / Dynamic Island */
@@ -1470,17 +1601,17 @@ img {
     padding-bottom: max(env(safe-area-inset-bottom), 1.8rem);
   }
 
-  .mobile-action-bar {
+  .sticky-action-bar {
     padding-bottom: max(env(safe-area-inset-bottom), 0.85rem);
   }
 
   .floating-garment-img {
-    max-height: 360px;
+    max-height: 380px;
   }
 
   .product-showcase-stage {
     grid-template-columns: 78px 1fr;
-    padding: 0.4rem 0.85rem;
+    padding: 0.6rem 0.85rem 0.2rem;
   }
 
   .rail-thumb-item {
@@ -1488,20 +1619,6 @@ img {
     height: 72px;
   }
 }
-
-/* Small heights adaptation */
-@media (max-height: 780px) and (min-width: 521px) {
-  .mobile-app-card {
-    height: 96vh;
-  }
-
-  .floating-garment-img {
-    max-height: 310px;
-  }
-
-  .rail-thumb-item {
-    height: 66px;
-  }
 }
 
 /* ================= INTRO INDEPENDENT SCREEN ================= */

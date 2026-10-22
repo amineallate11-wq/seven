@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="./css/style.css?v=3">
+  <link rel="stylesheet" href="./css/style.css?v=nativeMobile4">
 </head>
 <body class="app-stage-body">
 
@@ -136,123 +136,157 @@
         </div>
       </header>
 
-      <!-- Main Showcase Body (Vertical Thumbnails on Left + Floating Garment on Right) -->
-      <main class="product-showcase-stage" id="showcaseStage">
+      <!-- Main Mobile Scrollable Store Flow -->
+      <main class="mobile-store-content" id="mobileStoreContent">
         
-        <!-- Left Vertical Rail (Thumbnails & Badges) -->
-        <aside class="showcase-left-rail" aria-label="Galerie des vues">
-          
-          <!-- Category Label & Dots -->
-          <div class="rail-header-label">
-            <span class="rail-category-tag" id="railCategoryTag">SCRUBS</span>
-            <div class="rail-dots-indicator" aria-hidden="true">
-              <span class="micro-dot active"></span>
-              <span class="micro-dot"></span>
-              <span class="micro-dot"></span>
+        <!-- Showcase Stage: Garment Hero & Thumbnails -->
+        <section class="product-showcase-stage" id="showcaseStage">
+          <!-- Left Vertical Rail (Thumbnails & Badges) -->
+          <aside class="showcase-left-rail" aria-label="Galerie des vues">
+            <div class="rail-header-label">
+              <span class="rail-category-tag" id="railCategoryTag">SCRUBS</span>
+              <div class="rail-dots-indicator" aria-hidden="true">
+                <span class="micro-dot active"></span>
+                <span class="micro-dot"></span>
+                <span class="micro-dot"></span>
+              </div>
+            </div>
+
+            <!-- Vertical Thumbnails Stack -->
+            <div class="rail-thumbs-stack" id="railThumbsStack" role="tablist" aria-label="Angles de vue du pyjama">
+              <!-- Dynamically populated / switched by JS -->
+            </div>
+          </aside>
+
+          <!-- Right Stage: Floating 3D Garment Display -->
+          <div class="showcase-garment-stage" aria-label="Visuel interactif">
+            <!-- Top Floating Quality Pill -->
+            <div class="garment-floating-badge" id="garmentBadge">
+              <span class="badge-accent-dot"></span>
+              <span class="badge-text" id="garmentBadgeText">Édition Chirurgicale • Vert Olive & Orange</span>
+            </div>
+
+            <!-- Main Floating Garment with realistic 3D soft shadow -->
+            <div class="garment-hero-frame" id="garmentHeroFrame">
+              <div class="garment-shadow-blur" aria-hidden="true"></div>
+              <img 
+                id="mainFloatingImg" 
+                class="floating-garment-img" 
+                src="./images/women/scrub-front-cutout.png" 
+                alt="Pyjama de bloc chirurgical SEVEN 7"
+                fetchpriority="high"
+              >
+            </div>
+
+            <!-- Subtle watermark signature -->
+            <div class="garment-signature-mark" aria-hidden="true">
+              <span>SEVEN 7</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Product Details & Specs Section (Scrollable, Native Mobile Flow) -->
+        <section class="product-info-section">
+          <!-- Product Title & Color Swatches Row -->
+          <div class="controls-title-row">
+            <div class="title-details-block">
+              <h1 class="product-title-text" id="productTitle">Pyjama de Bloc Seven 7</h1>
+              <p class="product-subtitle-text" id="productSubtitle">Vert Olive Chirurgical & Cordons Orange</p>
+            </div>
+
+            <!-- Two Gender Swatches (Femme ♀ & Homme ♂) -->
+            <div class="product-swatches-selector" aria-label="Choix du modèle Femme ou Homme">
+              <button 
+                class="swatch-circle-btn swatch-women active" 
+                data-gender="women" 
+                id="swatchWomen" 
+                title="Modèle Femme (Vert Olive & Orange)"
+                aria-label="Modèle Femme"
+              >
+                <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
+                  <circle cx="16" cy="11.5" r="7.2" stroke="#ff007f" stroke-width="3.6" fill="none"/>
+                  <line x1="16" y1="18.7" x2="16" y2="29" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+                  <line x1="10.5" y1="23.8" x2="21.5" y2="23.8" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button 
+                class="swatch-circle-btn swatch-men" 
+                data-gender="men" 
+                id="swatchMen" 
+                title="Modèle Homme (Noir Onyx & Blanc)"
+                aria-label="Modèle Homme"
+              >
+                <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
+                  <circle cx="13" cy="19" r="7.2" stroke="#0018d9" stroke-width="3.6" fill="none"/>
+                  <line x1="18.1" y1="13.9" x2="27" y2="5" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round"/>
+                  <path d="M19 5H27V13" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
           </div>
 
-          <!-- Vertical Thumbnails Stack -->
-          <div class="rail-thumbs-stack" id="railThumbsStack" role="tablist" aria-label="Angles de vue du pyjama">
-            <!-- Dynamically populated / switched by JS -->
+          <!-- Price & Discount Badge Row -->
+          <div class="product-price-block">
+            <div class="price-val-wrap">
+              <span class="price-main-tag">590 DH</span>
+              <span class="price-original-tag">790 DH</span>
+            </div>
+            <span class="price-badge-saving">-200 DH • LANCEMENT</span>
           </div>
 
-        </aside>
-
-        <!-- Right Stage: Floating 3D Garment Display -->
-        <section class="showcase-garment-stage" aria-label="Visuel interactif">
-          
-          <!-- Top Floating Quality Pill -->
-          <div class="garment-floating-badge" id="garmentBadge">
-            <span class="badge-accent-dot"></span>
-            <span class="badge-text" id="garmentBadgeText">Édition Chirurgicale • Sergé Lycra 4-Way</span>
+          <!-- Fabric & Cut Mini Chips -->
+          <div class="controls-features-row">
+            <span class="control-chip">🧵 4-Way Stretch</span>
+            <span class="control-chip">🛡️ 6 Poches Cargo</span>
+            <span class="control-chip">✨ Tissu Infroissable</span>
+            <span class="control-chip">💧 Déperlant</span>
           </div>
 
-          <!-- Main Floating Garment with realistic 3D soft shadow -->
-          <div class="garment-hero-frame" id="garmentHeroFrame">
-            <div class="garment-shadow-blur" aria-hidden="true"></div>
-            <img 
-              id="mainFloatingImg" 
-              class="floating-garment-img" 
-              src="./images/women/scrub-front-cutout.png" 
-              alt="Pyjama de bloc chirurgical SEVEN 7"
-              fetchpriority="high"
-            >
+          <!-- Size Selection Row -->
+          <div class="controls-size-row">
+            <div class="size-label-wrap">
+              <span class="size-label-text">Taille :</span>
+              <button class="size-guide-trigger open-sizes-modal" id="openSizeGuideLink">
+                Guide des tailles ↗
+              </button>
+            </div>
+            <div class="size-capsules-group" id="sizeCapsulesGroup" role="radiogroup" aria-label="Sélectionnez votre taille">
+              <button class="size-capsule" data-size="S" role="radio" aria-checked="false">S</button>
+              <button class="size-capsule active" data-size="M" role="radio" aria-checked="true">M</button>
+              <button class="size-capsule" data-size="L" role="radio" aria-checked="false">L</button>
+            </div>
           </div>
 
-          <!-- Subtle watermark signature -->
-          <div class="garment-signature-mark" aria-hidden="true">
-            <span>SEVEN 7</span>
+          <!-- Trust & Service Badges -->
+          <div class="mobile-trust-grid">
+            <div class="trust-pill-item">
+              <span class="trust-emoji">⚡</span>
+              <span>Livraison 24h/48h</span>
+            </div>
+            <div class="trust-pill-item">
+              <span class="trust-emoji">💵</span>
+              <span>Paiement à la réception</span>
+            </div>
+            <div class="trust-pill-item">
+              <span class="trust-emoji">🔄</span>
+              <span>Échange de taille facile</span>
+            </div>
           </div>
 
+          <!-- Quality Highlight Box -->
+          <div class="mobile-specs-accordion">
+            <div class="specs-box-header">
+              <span class="specs-dot"></span>
+              <h4>Spécifications Techniques</h4>
+            </div>
+            <p class="specs-desc">Conçu spécialement pour les chirurgiens, internes et praticiens de santé. Tissu technique haute technicité offrant une liberté de mouvement 360°, résistant aux frottements et infroissable même après de longues heures au bloc opératoire.</p>
+          </div>
         </section>
 
       </main>
 
-      <!-- Product Information & Bottom Controls -->
-      <footer class="app-bottom-controls">
-        
-        <!-- Product Title & Color Swatches Row -->
-        <div class="controls-title-row">
-          <div class="title-details-block">
-            <h1 class="product-title-text" id="productTitle">Pyjama de Bloc Seven 7</h1>
-            <p class="product-subtitle-text" id="productSubtitle">Vert Olive Chirurgical & Cordons Orange</p>
-          </div>
-
-          <!-- Two Gender Swatches (Femme ♀ & Homme ♂) -->
-          <div class="product-swatches-selector" aria-label="Choix du modèle Femme ou Homme">
-            <button 
-              class="swatch-circle-btn swatch-women active" 
-              data-gender="women" 
-              id="swatchWomen" 
-              title="Modèle Femme (Vert Olive & Orange)"
-              aria-label="Modèle Femme"
-            >
-              <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
-                <circle cx="16" cy="11.5" r="7.2" stroke="#ff007f" stroke-width="3.6" fill="none"/>
-                <line x1="16" y1="18.7" x2="16" y2="29" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
-                <line x1="10.5" y1="23.8" x2="21.5" y2="23.8" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
-              </svg>
-            </button>
-            <button 
-              class="swatch-circle-btn swatch-men" 
-              data-gender="men" 
-              id="swatchMen" 
-              title="Modèle Homme (Noir Onyx & Blanc)"
-              aria-label="Modèle Homme"
-            >
-              <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
-                <circle cx="13" cy="19" r="7.2" stroke="#0018d9" stroke-width="3.6" fill="none"/>
-                <line x1="18.1" y1="13.9" x2="27" y2="5" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round"/>
-                <path d="M19 5H27V13" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Fabric & Cut Mini Chips -->
-        <div class="controls-features-row">
-          <span class="control-chip">🧵 4-Way Stretch</span>
-          <span class="control-chip">🛡️ 6 Poches Cargo</span>
-          <span class="control-chip">✨ Infroissable</span>
-        </div>
-
-        <!-- Size Selection Row -->
-        <div class="controls-size-row">
-          <div class="size-label-wrap">
-            <span class="size-label-text">Taille :</span>
-            <button class="size-guide-trigger open-sizes-modal" id="openSizeGuideLink">
-              Guide des tailles ↗
-            </button>
-          </div>
-          <div class="size-capsules-group" id="sizeCapsulesGroup" role="radiogroup" aria-label="Sélectionnez votre taille">
-            <button class="size-capsule" data-size="S" role="radio" aria-checked="false">S</button>
-            <button class="size-capsule active" data-size="M" role="radio" aria-checked="true">M</button>
-            <button class="size-capsule" data-size="L" role="radio" aria-checked="false">L</button>
-          </div>
-        </div>
-
-        <!-- Bottom Dual Pill Action Buttons (Exact reference match!) -->
+      <!-- Sticky Bottom Dual Action Bar (Always Accessible on Mobile) -->
+      <footer class="sticky-action-bar" id="stickyActionBar">
         <div class="controls-actions-dual">
           <!-- Left Secondary Pill (White/Cream) -->
           <button class="action-pill-secondary" id="addToCartBtn" onclick="SEVEN_STORE.addActiveToCart()">
