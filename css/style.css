@@ -128,40 +128,32 @@ img {
   user-select: none;
 }
 
-/* ================= Top Status Bar ================= */
-.top-status-bar {
+/* ================= Luxury Announcement Strip (Clean, No Fake Phone Chrome) ================= */
+.luxury-announcement-strip {
+  background: #191714;
+  color: #dfb36c;
+  padding: 0.45rem 1rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.65rem 1.25rem 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  letter-spacing: -0.01em;
-  z-index: 10;
-}
-
-.status-pill-announcement {
-  background: rgba(186, 134, 54, 0.16);
-  color: #7a5416;
-  border: 1px solid rgba(186, 134, 54, 0.25);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  justify-content: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid rgba(223, 179, 108, 0.15);
+  z-index: 12;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 220px;
 }
 
-.status-icons {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--text-secondary);
+.announcement-sparkle {
+  color: #df9f2d;
+  font-size: 0.7rem;
+}
+
+.announcement-text {
+  letter-spacing: 0.06em;
 }
 
 /* ================= App Header ================= */
@@ -811,13 +803,9 @@ img {
   transform: scale(0.98);
 }
 
-/* Home Indicator Bar */
+/* Home Indicator Bar removed - real phones have native gesture bar */
 .mobile-home-indicator {
-  width: 120px;
-  height: 4px;
-  background-color: rgba(28, 26, 23, 0.2);
-  border-radius: 4px;
-  margin: 0.45rem auto 0;
+  display: none !important;
 }
 
 /* ================= Slide-in Drawers ================= */
@@ -1442,24 +1430,48 @@ img {
 }
 
 /* ================= Fully Responsive Native Mobile View ================= */
-@media (max-width: 520px) {
+/* ================= Fully Responsive Native Mobile View ================= */
+@media (max-width: 680px) {
   body.app-stage-body {
     padding: 0;
+    margin: 0;
     background: var(--card-bg);
   }
 
   .luxury-presentation-wrap {
     width: 100%;
     height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0;
   }
 
   .mobile-app-card {
     max-width: 100%;
+    width: 100%;
     height: 100vh;
     height: 100dvh;
     max-height: none;
     border-radius: 0;
+    border: none;
     box-shadow: none;
+  }
+
+  /* Safe Area Insets for Notch / Dynamic Island */
+  .luxury-announcement-strip {
+    padding-top: max(env(safe-area-inset-top), 0.45rem);
+  }
+
+  .intro-header-bar {
+    padding-top: max(env(safe-area-inset-top), 1.25rem);
+  }
+
+  .intro-body-content {
+    padding-bottom: max(env(safe-area-inset-bottom), 1.8rem);
+  }
+
+  .mobile-action-bar {
+    padding-bottom: max(env(safe-area-inset-bottom), 0.85rem);
   }
 
   .floating-garment-img {
