@@ -295,12 +295,12 @@ const SEVEN_STORE = (() => {
 
     const sizeDisplay = getSizeDisplay(prod);
     const message = `Bonjour SEVEN, je souhaite commander :
-- Modèle : ${prod.name}
-- Couleurs : ${prod.tag}
-- Taille : ${sizeDisplay}
-- Quantité : 1
-- Prix : ${prod.price} ${STORE_CURRENCY}
-- Mode : Paiement à la livraison au Maroc
+•  Modèle : ${prod.name}
+•  Couleurs : ${prod.tag}
+•  Taille : ${sizeDisplay}
+•  Quantité : 1
+•  Prix : ${prod.price} ${STORE_CURRENCY}
+•  Mode : Paiement à la livraison au Maroc
 
 Merci de me confirmer la commande et le délai de livraison !`;
 
@@ -423,20 +423,33 @@ Merci de me confirmer la commande et le délai de livraison !`;
     }
 
     const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
-    const items = cart.map(i => `• ${i.name} (Taille ${i.size}) x${i.qty} = ${i.price * i.qty} DH`).join('\n');
 
-    const message = `Bonjour SEVEN, je valide ma commande :
+    let message = '';
+    if (cart.length === 1) {
+      const item = cart[0];
+      message = `Bonjour SEVEN, je souhaite commander :
+•  Modèle : ${item.name}
+•  Couleurs : ${item.tag}
+•  Taille : ${item.size}
+•  Quantité : ${item.qty}
+•  Prix : ${item.price * item.qty} ${STORE_CURRENCY}
+•  Mode : Paiement à la livraison au Maroc
 
-${items}
+Merci de me confirmer la commande et le délai de livraison !`;
+    } else {
+      const itemsList = cart.map(i => 
+        `•  Modèle : ${i.name}\n   Couleurs : ${i.tag}\n   Taille : ${i.size}\n   Quantité : ${i.qty}\n   Prix : ${i.price * i.qty} ${STORE_CURRENCY}`
+      ).join('\n\n');
 
-💰 Total : ${totalPrice} ${STORE_CURRENCY}
-📦 Mode : Paiement en espèces à la livraison partout au Maroc
+      message = `Bonjour SEVEN, je souhaite commander :
 
-Mes coordonnées de livraison :
-- Nom & Prénom : 
-- Téléphone : 
-- Ville : 
-- Adresse / Clinique : `;
+${itemsList}
+
+•  Total : ${totalPrice} ${STORE_CURRENCY}
+•  Mode : Paiement à la livraison au Maroc
+
+Merci de me confirmer la commande et le délai de livraison !`;
+    }
 
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
