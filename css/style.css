@@ -1619,19 +1619,25 @@ img {
     height: 72px;
   }
 }
-}
 
 /* ================= INTRO INDEPENDENT SCREEN ================= */
 .intro-screen-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 500;
-  overflow: hidden;
-  border-radius: var(--card-radius);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #12100e;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  background: #12100e !important;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
