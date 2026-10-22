@@ -2,408 +2,480 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SEVEN — Pyjamas de Bloc Médicaux | Boutique Officielle</title>
-  <meta name="description" content="Pyjamas de bloc chirurgicaux haut de gamme SEVEN. Modèle Femme Vert Olive & Orange et Modèle Homme Noir & Blanc. Sergé Lycra 4-way stretch. Commande directe sur WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SEVEN 7 — Pyjamas de Bloc Chirurgicaux Haut de Gamme</title>
+  <meta name="description" content="Découvrez les pyjamas de bloc chirurgicaux SEVEN 7 en Sergé Lycra 4-way stretch. Coupe ergonomique 6 poches cargo. Commande directe sur WhatsApp partout au Maroc.">
   <link rel="icon" type="image/svg+xml" href="./images/brand/logo.svg">
-  <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css?v=2">
 </head>
-<body>
+<body class="app-stage-body">
 
-  <!-- Top Announcement Strip -->
-  <aside class="header-strip">
-    LIVRAISON 24H/48H MAROC • PAIEMENT À LA LIVRAISON • WHATSAPP : +212 6.98.04.05.72
-  </aside>
-
-  <!-- Compact Sticky Header -->
-  <header class="mobile-header">
-    <div class="header-content">
-      <a href="#" class="header-brand" aria-label="Accueil SEVEN">
-        <img src="./images/brand/logo.svg" alt="SEVEN Logo" class="header-brand-logo">
-        <span class="header-brand-name">seven <span class="header-brand-badge">7</span></span>
-      </a>
-
-      <div class="header-actions-right">
-        <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="btn-header-wa">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
-          </svg>
-          <span>WhatsApp</span>
-        </a>
-
-        <button class="btn-header-cart open-cart-btn" aria-label="Voir le panier">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>
-          </svg>
-          <span class="cart-counter">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="container-mobile">
+  <!-- Desktop Presentation Outer Frame -->
+  <div class="luxury-presentation-wrap">
     
-    <!-- Hero Clean Section -->
-    <section class="hero-clean">
-      <div class="hero-pill-tag">
-        <span class="dot"></span>
-        <span>Collection Bloc Chirurgical</span>
-      </div>
-      <h1 class="hero-title-main">Pyjamas de Bloc SEVEN 7</h1>
-      <p class="hero-desc-clean">
-        Tissu Sergé Lycra 4-way stretch infroissable, 6 poches cargo et broderie Seven 7. Pensé par et pour les soignants.
-      </p>
-    </section>
+    <!-- Mobile App Container Card -->
+    <div class="mobile-app-card" id="mobileAppCard">
 
-    <!-- Category Filter Switcher -->
-    <nav class="filter-switcher-wrap" aria-label="Filtres par genre">
-      <div class="category-pills-row">
-        <button class="category-pill active" data-filter="all">⚡ Tous nos modèles</button>
-        <button class="category-pill pill-women" data-filter="women">🟢 Femme (Olive & Orange)</button>
-        <button class="category-pill pill-men" data-filter="men">⚫ Homme (Noir & Blanc)</button>
-      </div>
-    </nav>
+      <!-- ================= INTRO INDEPENDENT SCREEN ================= -->
+      <section class="intro-screen-overlay" id="introScreenOverlay" aria-label="Introduction Seven">
+        <img class="intro-bg-img" src="./images/brand/intro-hero.jpg" alt="SEVEN — Beyond the Uniforme Campagne">
+        <div class="intro-gradient-top"></div>
+        <div class="intro-gradient-bottom"></div>
 
-    <!-- Products Stack (Catalogue) -->
-    <section class="products-stack" id="catalogue">
-
-      <!-- ================= PRODUCT 1 : FEMME (VERT OLIVE & ORANGE) ================= -->
-      <article class="product-mobile-card women-card" data-gender="women">
-        
-        <!-- Top Status Tag -->
-        <div class="card-top-tag tag-women-style">
-          <span class="card-badge-label women">🟢 Femme • Vert Olive & Orange</span>
-          <span class="card-stock-status"><span class="pulse"></span> En Stock</span>
-        </div>
-
-        <!-- Main Image Viewer -->
-        <div class="card-img-viewer">
-          <img id="mainImg-women" src="./images/women/model-front.png" alt="Pyjama de bloc Femme Vert Olive et Orange" fetchpriority="high">
-        </div>
-
-        <!-- Thumbnails Row -->
-        <div class="card-thumbs-scroll">
-          <button class="thumb-btn active" data-product="women" data-src="./images/women/model-front.png" title="Porté Face">
-            <img src="./images/women/model-front.png" alt="Porté face">
-          </button>
-          <button class="thumb-btn" data-product="women" data-src="./images/women/model-back.png" title="Porté Dos">
-            <img src="./images/women/model-back.png" alt="Porté dos">
-          </button>
-          <button class="thumb-btn" data-product="women" data-src="./images/women/scrub-front.png" title="Ensemble Face">
-            <img src="./images/women/scrub-front.png" alt="Ensemble face">
-          </button>
-          <button class="thumb-btn" data-product="women" data-src="./images/women/scrub-back.png" title="Ensemble Dos">
-            <img src="./images/women/scrub-back.png" alt="Ensemble dos">
-          </button>
-          <button class="thumb-btn" data-product="women" data-src="./images/women/scrub-side.png" title="Vue Profil">
-            <img src="./images/women/scrub-side.png" alt="Vue profil">
+        <!-- Intro Top Header -->
+        <div class="intro-header-bar">
+          <div class="intro-logo-mark">
+            <span class="intro-equal-symbol">=</span>
+            <span class="intro-logo-text">SEVEN<span class="intro-logo-num">7</span></span>
+          </div>
+          <button class="intro-skip-btn" id="introSkipBtn" title="Passer directement à la boutique">
+            <span>Passer</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </button>
         </div>
 
-        <!-- Card Body -->
-        <div class="card-body">
-          <div class="card-title-row">
-            <h2 class="card-product-title">Pyjama de Bloc SEVEN 7 — Femme</h2>
-          </div>
-          <div class="card-color-subtitle">
-            Vert Olive Chirurgical & Cordons Orange Électrique
-          </div>
+        <!-- Intro Bottom Typography & Actions -->
+        <div class="intro-body-content">
+          <span class="intro-pill-badge">ÉDITION CHIRURGICALE 2026</span>
+          <h1 class="intro-brand-title">
+            SEVEN<span class="digit-seven">7</span>
+          </h1>
+          <span class="intro-tagline">BEYOND THE UNIFORME</span>
+          <div class="intro-divider-line"></div>
+          <p class="intro-subtext">L'élégance urbaine et la haute technicité médicale réunies au cœur du bloc opératoire.</p>
 
-          <!-- Feature Chips -->
-          <div class="card-features-chips">
-            <span class="feature-chip">✨ Col V-Notch Fendu</span>
-            <span class="feature-chip">🔥 Cordons Orange Contrastés</span>
-            <span class="feature-chip">🛡️ 6 Poches Cargo</span>
-            <span class="feature-chip">🧵 Sergé Lycra Stretch</span>
-          </div>
-
-          <!-- Size Selector Box -->
-          <div class="size-selector-box">
-            <div class="size-header-mobile">
-              <span class="size-title-text">Taille sélectionnée :</span>
-              <span class="size-guide-link open-sizes-modal">Guide des tailles</span>
-            </div>
-            <div class="size-pills-grid">
-              <button class="size-pill" data-product="women" data-size="S">S</button>
-              <button class="size-pill active" data-product="women" data-size="M">M</button>
-              <button class="size-pill" data-product="women" data-size="L">L</button>
-              <button class="size-pill" data-product="women" data-size="XL">XL</button>
-            </div>
-          </div>
-
-          <!-- Price Row -->
-          <div class="card-price-row">
-            <span class="price-main">590 DH</span>
-            <span class="price-crossed">790 DH</span>
-            <span class="price-discount-tag">-200 DH OFFRE</span>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="card-actions-grid">
-            <button class="btn-order-whatsapp-main" onclick="SEVEN_STORE.orderWhatsApp('women')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
-              </svg>
-              <span>Commander sur WhatsApp (590 DH)</span>
-            </button>
-            
-            <button class="btn-add-cart-secondary" onclick="SEVEN_STORE.addToCart('women')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-              <span>Ajouter au Panier</span>
-            </button>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- ================= PRODUCT 2 : HOMME (NOIR & BLANC) ================= -->
-      <article class="product-mobile-card men-card" data-gender="men">
-        
-        <!-- Top Status Tag -->
-        <div class="card-top-tag tag-men-style">
-          <span class="card-badge-label men">⚫ Homme • Noir & Blanc</span>
-          <span class="card-stock-status"><span class="pulse"></span> En Stock</span>
-        </div>
-
-        <!-- Main Image Viewer -->
-        <div class="card-img-viewer">
-          <img id="mainImg-men" src="./images/men/model-front.png" alt="Pyjama de bloc Homme Noir et Blanc" loading="lazy">
-        </div>
-
-        <!-- Thumbnails Row -->
-        <div class="card-thumbs-scroll">
-          <button class="thumb-btn active" data-product="men" data-src="./images/men/model-front.png" title="Porté Face">
-            <img src="./images/men/model-front.png" alt="Porté face">
+          <button class="intro-cta-button" id="introEnterBtn">
+            <span>DÉCOUVRIR LA COLLECTION</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
-          <button class="thumb-btn" data-product="men" data-src="./images/men/model-back.png" title="Porté Dos">
-            <img src="./images/men/model-back.png" alt="Porté dos">
-          </button>
-          <button class="thumb-btn" data-product="men" data-src="./images/men/scrub-front.png" title="Ensemble Face">
-            <img src="./images/men/scrub-front.png" alt="Ensemble face">
-          </button>
-          <button class="thumb-btn" data-product="men" data-src="./images/men/scrub-back.png" title="Ensemble Dos">
-            <img src="./images/men/scrub-back.png" alt="Ensemble dos">
-          </button>
-          <button class="thumb-btn" data-product="men" data-src="./images/men/model-lifestyle.jpg" title="Lifestyle Maroc">
-            <img src="./images/men/model-lifestyle.jpg" alt="Lifestyle Maroc">
-          </button>
-        </div>
 
-        <!-- Card Body -->
-        <div class="card-body">
-          <div class="card-title-row">
-            <h2 class="card-product-title">Pyjama de Bloc SEVEN 7 — Homme</h2>
+          <!-- Smooth auto-progress indicator -->
+          <div class="intro-progress-track" title="Progression vers la boutique">
+            <div class="intro-progress-bar" id="introProgressBar"></div>
           </div>
-          <div class="card-color-subtitle">
-            Noir Onyx Profond & Cordons Blanc Craie
-          </div>
-
-          <!-- Feature Chips -->
-          <div class="card-features-chips">
-            <span class="feature-chip">👔 Col Polo Structuré</span>
-            <span class="feature-chip">⚪ Cordons Blancs Craie</span>
-            <span class="feature-chip">🛡️ 6 Poches Cargo</span>
-            <span class="feature-chip">🧵 Sergé Lycra Stretch</span>
-          </div>
-
-          <!-- Size Selector Box -->
-          <div class="size-selector-box">
-            <div class="size-header-mobile">
-              <span class="size-title-text">Taille sélectionnée :</span>
-              <span class="size-guide-link open-sizes-modal">Guide des tailles</span>
-            </div>
-            <div class="size-pills-grid">
-              <button class="size-pill" data-product="men" data-size="S">S</button>
-              <button class="size-pill" data-product="men" data-size="M">M</button>
-              <button class="size-pill active" data-product="men" data-size="L">L</button>
-              <button class="size-pill" data-product="men" data-size="XL">XL</button>
-            </div>
-          </div>
-
-          <!-- Price Row -->
-          <div class="card-price-row">
-            <span class="price-main">590 DH</span>
-            <span class="price-crossed">790 DH</span>
-            <span class="price-discount-tag">-200 DH OFFRE</span>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="card-actions-grid">
-            <button class="btn-order-whatsapp-main" onclick="SEVEN_STORE.orderWhatsApp('men')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
-              </svg>
-              <span>Commander sur WhatsApp (590 DH)</span>
-            </button>
-            
-            <button class="btn-add-cart-secondary" onclick="SEVEN_STORE.addToCart('men')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-              <span>Ajouter au Panier</span>
-            </button>
-          </div>
-
         </div>
-      </article>
-
-    </section>
-
-    <!-- Trust Strip Compact -->
-    <div class="trust-strip-mobile">
-      <div class="trust-item-compact">
-        <span class="trust-item-icon">🚚</span>
-        <div class="trust-item-texts">
-          <h4>Livraison 24h-48h</h4>
-          <p>Partout au Maroc</p>
+      </section>
+      
+      <!-- Top Status / Announcement Bar -->
+      <div class="top-status-bar">
+        <span class="status-time">09:41</span>
+        <div class="status-pill-announcement">
+          <span>✨ LIVRAISON 24H-48H MAROC • PAIEMENT À LA LIVRAISON</span>
         </div>
-      </div>
-      <div class="trust-item-compact">
-        <span class="trust-item-icon">💵</span>
-        <div class="trust-item-texts">
-          <h4>Paiement à la livraison</h4>
-          <p>Espèces ou virement</p>
-        </div>
-      </div>
-      <div class="trust-item-compact">
-        <span class="trust-item-icon">🔄</span>
-        <div class="trust-item-texts">
-          <h4>Échange de taille</h4>
-          <p>Garanti sous 7 jours</p>
-        </div>
-      </div>
-      <div class="trust-item-compact">
-        <span class="trust-item-icon">💬</span>
-        <div class="trust-item-texts">
-          <h4>Support WhatsApp</h4>
-          <p>Disponible 7j/7</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Motto Card -->
-    <div class="motto-card-mobile">
-      <div class="motto-collar-thumb">
-        <img src="./images/brand/collar-inside-hero.png" alt="Détail col intérieur Seven">
-      </div>
-      <div class="motto-text-box">
-        <h3>« Same shift. Same hero. Again. »</h3>
-        <p>Liseré signature brodé à l'intérieur de chaque col Seven 7.</p>
-      </div>
-    </div>
-
-    <!-- Fast Contact Card -->
-    <section class="contact-fast-card">
-      <h3>Une question sur votre commande ?</h3>
-      <p>Contactez directement notre équipe pour vos conseils de taille ou commandes de service.</p>
-      <div class="contact-links-grid">
-        <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="contact-link-row wa-row">
-          <span>💬 WhatsApp : +212 6.98.04.05.72</span>
-        </a>
-        <a href="https://instagram.com/sevenscrubs" target="_blank" rel="noopener" class="contact-link-row">
-          <span>📸 Instagram : @sevenscrubs</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="mobile-footer">
-      <p>© 2026 SEVEN 7 • Vente en ligne de pyjamas de bloc chirurgicaux</p>
-      <p>Conçu pour le corps soignant et médical d'élite au Maroc.</p>
-    </footer>
-
-  </main>
-
-  <!-- Sticky Bottom Bar on Mobile -->
-  <aside class="mobile-sticky-action-bar" id="mobileStickyBar">
-    <div class="sticky-bar-inner">
-      <button class="sticky-wa-button" id="stickyWhatsAppBtn" onclick="SEVEN_STORE.openWhatsAppGeneral()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
-        </svg>
-        <span>Commander sur WhatsApp • 590 DH</span>
-      </button>
-
-      <button class="sticky-cart-btn open-cart-btn" aria-label="Voir le panier">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>
-        </svg>
-        <span class="cart-counter">0</span>
-      </button>
-    </div>
-  </aside>
-
-  <!-- Slide-in Cart Drawer (Bottom Sheet) -->
-  <div class="cart-overlay-drawer" id="cartOverlay">
-    <div class="cart-panel" role="dialog" aria-modal="true" aria-label="Votre panier">
-      <div class="cart-panel-head">
-        <h3>🛍️ Votre Panier Seven</h3>
-        <button class="cart-close-x" id="closeCartBtn" aria-label="Fermer">✕</button>
-      </div>
-
-      <div class="cart-items-body" id="cartItemsList">
-        <!-- Rendered by JS -->
-      </div>
-
-      <div class="cart-panel-foot">
-        <div class="cart-foot-total">
-          <span>Sous-total</span>
-          <span id="cartTotalDisplay">0 DH</span>
-        </div>
-        <button class="btn-order-whatsapp-main" onclick="SEVEN_STORE.orderCartWhatsApp()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.983.541 1.936.883 3.003.884h.005c3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.771-5.781-5.771zm0-2.172c4.418 0 8 3.582 8 8 0 1.545-.441 2.99-1.205 4.223l1.205 4.407-4.524-1.187c-1.18.66-2.534 1.037-3.976 1.037-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8z"/>
+        <div class="status-icons">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor">
+            <path d="M1 9h2V1H1v8zm4 0h2V3H5v6zm4 0h2V5H9v4zm4 0h1V7h-1v2z"/>
           </svg>
-          <span>Commander le Panier sur WhatsApp</span>
-        </button>
+          <svg width="15" height="11" viewBox="0 0 16 12" fill="currentColor">
+            <path d="M8 0C3.6 0 .5 2.8 0 3.2l8 8.8 8-8.8C15.5 2.8 12.4 0 8 0z"/>
+          </svg>
+          <svg width="18" height="10" viewBox="0 0 22 12" fill="currentColor">
+            <rect x="1" y="1" width="18" height="10" rx="3" stroke="currentColor" fill="none" stroke-width="1.5"/>
+            <rect x="2.5" y="2.5" width="13" height="7" rx="1.5" fill="currentColor"/>
+            <path d="M20.5 4.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Sizing Guide Modal -->
-  <div class="app-modal" id="sizesModal">
-    <div class="modal-dialog">
-      <div class="modal-head">
-        <h3>Guide des Tailles Bloc</h3>
-        <button class="close-modal-btn">✕</button>
+      <!-- App Header Bar -->
+      <header class="app-header">
+        <div class="header-left-group">
+          <!-- Hamburger Menu Icon -->
+          <button class="nav-icon-btn" id="openMenuBtn" aria-label="Menu et détails du pyjama" title="Menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar short"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <!-- Back Chevron -->
+          <button class="nav-icon-btn" id="headerBackBtn" aria-label="Retour" title="Retour">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Gender Switcher (Femme ♀ / Homme ♂) -->
+          <div class="header-avatar-switcher" title="Changer de modèle (Femme / Homme)">
+            <button class="avatar-badge-btn gender-badge-women active" data-gender="women" id="avatarWomen" title="Modèle Femme (Vert Olive & Orange)" aria-label="Modèle Femme">
+              <svg viewBox="0 0 32 32" width="16" height="16" fill="none" class="gender-icon icon-female">
+                <circle cx="16" cy="11.5" r="7.2" stroke="#ff007f" stroke-width="3.6" fill="none"/>
+                <line x1="16" y1="18.7" x2="16" y2="29" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+                <line x1="10.5" y1="23.8" x2="21.5" y2="23.8" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="avatar-badge-btn gender-badge-men" data-gender="men" id="avatarMen" title="Modèle Homme (Noir & Blanc)" aria-label="Modèle Homme">
+              <svg viewBox="0 0 32 32" width="16" height="16" fill="none" class="gender-icon icon-male">
+                <circle cx="13" cy="19" r="7.2" stroke="#0018d9" stroke-width="3.6" fill="none"/>
+                <line x1="18.1" y1="13.9" x2="27" y2="5" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round"/>
+                <path d="M19 5H27V13" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Center Brand Emblem & Title -->
+        <div class="header-center-brand">
+          <span class="brand-equal-icon">=</span>
+          <span class="brand-text-title">SEVEN<span class="brand-seven-digit">7</span></span>
+        </div>
+
+        <!-- Right Action Icons -->
+        <div class="header-right-group">
+          <!-- WhatsApp Contact Button -->
+          <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="nav-icon-btn wa-shortcut-btn" aria-label="Contacter sur WhatsApp" title="WhatsApp Seven">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.275-.1-.476-.15-.677.15-.2.301-.777.978-.953 1.178-.175.2-.351.226-.652.075-.3-.15-1.268-.468-2.417-1.493-.893-.797-1.497-1.782-1.673-2.083-.175-.3-.019-.462.132-.612.136-.134.301-.351.451-.527.151-.175.201-.3.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.632-.927-2.234-.244-.587-.492-.507-.677-.517-.175-.009-.376-.01-.577-.01-.201 0-.527.075-.802.376-.276.301-1.054 1.03-1.054 2.511 0 1.481 1.079 2.912 1.23 3.113.15.201 2.122 3.24 5.142 4.542.719.31 1.28.495 1.718.634.722.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-.143-.075-.125-.276-.201-.577-.351zM12 2C6.477 2 2 6.477 2 12c0 1.76.456 3.413 1.25 4.855L2 22l5.289-1.222C8.68 21.564 10.292 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.572 0-3.033-.443-4.275-1.213l-.307-.191-3.176.734.747-3.112-.209-.323C4.015 14.887 3.55 13.488 3.55 12c0-4.659 3.791-8.45 8.45-8.45 4.659 0 8.45 3.791 8.45 8.45 0 4.659-3.791 8.45-8.45 8.45z"/>
+            </svg>
+          </a>
+
+          <!-- Cart Button with Counter -->
+          <button class="nav-icon-btn cart-header-btn open-cart-btn" aria-label="Voir le panier" title="Panier">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 01-8 0"></path>
+            </svg>
+            <span class="cart-counter" id="cartCountBadge">0</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Showcase Body (Vertical Thumbnails on Left + Floating Garment on Right) -->
+      <main class="product-showcase-stage" id="showcaseStage">
+        
+        <!-- Left Vertical Rail (Thumbnails & Badges) -->
+        <aside class="showcase-left-rail" aria-label="Galerie des vues">
+          
+          <!-- Category Label & Dots -->
+          <div class="rail-header-label">
+            <span class="rail-category-tag" id="railCategoryTag">SCRUBS</span>
+            <div class="rail-dots-indicator" aria-hidden="true">
+              <span class="micro-dot active"></span>
+              <span class="micro-dot"></span>
+              <span class="micro-dot"></span>
+            </div>
+          </div>
+
+          <!-- Vertical Thumbnails Stack -->
+          <div class="rail-thumbs-stack" id="railThumbsStack" role="tablist" aria-label="Angles de vue du pyjama">
+            <!-- Dynamically populated / switched by JS -->
+          </div>
+
+        </aside>
+
+        <!-- Right Stage: Floating 3D Garment Display -->
+        <section class="showcase-garment-stage" aria-label="Visuel interactif">
+          
+          <!-- Top Floating Quality Pill -->
+          <div class="garment-floating-badge" id="garmentBadge">
+            <span class="badge-accent-dot"></span>
+            <span class="badge-text" id="garmentBadgeText">Édition Chirurgicale • Sergé Lycra 4-Way</span>
+          </div>
+
+          <!-- Main Floating Garment with realistic 3D soft shadow -->
+          <div class="garment-hero-frame" id="garmentHeroFrame">
+            <div class="garment-shadow-blur" aria-hidden="true"></div>
+            <img 
+              id="mainFloatingImg" 
+              class="floating-garment-img" 
+              src="./images/women/scrub-front-cutout.png" 
+              alt="Pyjama de bloc chirurgical SEVEN 7"
+              fetchpriority="high"
+            >
+          </div>
+
+          <!-- Subtle watermark signature -->
+          <div class="garment-signature-mark" aria-hidden="true">
+            <span>SEVEN 7</span>
+          </div>
+
+        </section>
+
+      </main>
+
+      <!-- Product Information & Bottom Controls -->
+      <footer class="app-bottom-controls">
+        
+        <!-- Product Title & Color Swatches Row -->
+        <div class="controls-title-row">
+          <div class="title-details-block">
+            <h1 class="product-title-text" id="productTitle">Pyjama de Bloc Seven 7</h1>
+            <p class="product-subtitle-text" id="productSubtitle">Vert Olive Chirurgical & Cordons Orange</p>
+          </div>
+
+          <!-- Two Gender Swatches (Femme ♀ & Homme ♂) -->
+          <div class="product-swatches-selector" aria-label="Choix du modèle Femme ou Homme">
+            <button 
+              class="swatch-circle-btn swatch-women active" 
+              data-gender="women" 
+              id="swatchWomen" 
+              title="Modèle Femme (Vert Olive & Orange)"
+              aria-label="Modèle Femme"
+            >
+              <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
+                <circle cx="16" cy="11.5" r="7.2" stroke="#ff007f" stroke-width="3.6" fill="none"/>
+                <line x1="16" y1="18.7" x2="16" y2="29" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+                <line x1="10.5" y1="23.8" x2="21.5" y2="23.8" stroke="#ff007f" stroke-width="3.6" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button 
+              class="swatch-circle-btn swatch-men" 
+              data-gender="men" 
+              id="swatchMen" 
+              title="Modèle Homme (Noir Onyx & Blanc)"
+              aria-label="Modèle Homme"
+            >
+              <svg viewBox="0 0 32 32" width="13" height="13" fill="none">
+                <circle cx="13" cy="19" r="7.2" stroke="#0018d9" stroke-width="3.6" fill="none"/>
+                <line x1="18.1" y1="13.9" x2="27" y2="5" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round"/>
+                <path d="M19 5H27V13" stroke="#0018d9" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fabric & Cut Mini Chips -->
+        <div class="controls-features-row">
+          <span class="control-chip">🧵 4-Way Stretch</span>
+          <span class="control-chip">🛡️ 6 Poches Cargo</span>
+          <span class="control-chip">✨ Infroissable</span>
+        </div>
+
+        <!-- Size Selection Row -->
+        <div class="controls-size-row">
+          <div class="size-label-wrap">
+            <span class="size-label-text">Taille :</span>
+            <button class="size-guide-trigger open-sizes-modal" id="openSizeGuideLink">
+              Guide des tailles ↗
+            </button>
+          </div>
+          <div class="size-capsules-group" id="sizeCapsulesGroup" role="radiogroup" aria-label="Sélectionnez votre taille">
+            <button class="size-capsule" data-size="S" role="radio" aria-checked="false">S</button>
+            <button class="size-capsule active" data-size="M" role="radio" aria-checked="true">M</button>
+            <button class="size-capsule" data-size="L" role="radio" aria-checked="false">L</button>
+          </div>
+        </div>
+
+        <!-- Bottom Dual Pill Action Buttons (Exact reference match!) -->
+        <div class="controls-actions-dual">
+          <!-- Left Secondary Pill (White/Cream) -->
+          <button class="action-pill-secondary" id="addToCartBtn" onclick="SEVEN_STORE.addActiveToCart()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            <span>AJOUTER</span>
+          </button>
+
+          <!-- Right Primary Pill (Warm Golden Amber/Mustard) -->
+          <button class="action-pill-primary" id="orderWhatsAppBtn" onclick="SEVEN_STORE.orderActiveWhatsApp()">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.275-.1-.476-.15-.677.15-.2.301-.777.978-.953 1.178-.175.2-.351.226-.652.075-.3-.15-1.268-.468-2.417-1.493-.893-.797-1.497-1.782-1.673-2.083-.175-.3-.019-.462.132-.612.136-.134.301-.351.451-.527.151-.175.201-.3.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.632-.927-2.234-.244-.587-.492-.507-.677-.517-.175-.009-.376-.01-.577-.01-.201 0-.527.075-.802.376-.276.301-1.054 1.03-1.054 2.511 0 1.481 1.079 2.912 1.23 3.113.15.201 2.122 3.24 5.142 4.542.719.31 1.28.495 1.718.634.722.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-.143-.075-.125-.276-.201-.577-.351zM12 2C6.477 2 2 6.477 2 12c0 1.76.456 3.413 1.25 4.855L2 22l5.289-1.222C8.68 21.564 10.292 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.572 0-3.033-.443-4.275-1.213l-.307-.191-3.176.734.747-3.112-.209-.323C4.015 14.887 3.55 13.488 3.55 12c0-4.659 3.791-8.45 8.45-8.45 4.659 0 8.45 3.791 8.45 8.45 0 4.659-3.791 8.45-8.45 8.45z"/>
+            </svg>
+            <span id="orderBtnLabel">COMMANDER • 590 DH</span>
+          </button>
+        </div>
+
+        <!-- Home Bar Indicator -->
+        <div class="mobile-home-indicator" aria-hidden="true"></div>
+
+      </footer>
+
+      <!-- ================= SIDE DRAWER: MENU & DETAILS ================= -->
+      <div class="drawer-overlay" id="menuDrawerOverlay">
+        <aside class="drawer-panel drawer-left" id="menuDrawerPanel">
+          <div class="drawer-header">
+            <div class="drawer-title-group">
+              <span class="brand-equal-icon">=</span>
+              <h3>SEVEN 7 Scrub Collection</h3>
+            </div>
+            <button class="drawer-close-btn" id="closeMenuBtn" aria-label="Fermer le menu">✕</button>
+          </div>
+
+          <div class="drawer-body">
+            
+            <!-- Quick Model Switcher in Menu -->
+            <div class="drawer-model-box">
+              <span class="drawer-label">Modèle en cours :</span>
+              <div class="drawer-model-buttons">
+                <button class="drawer-model-opt active" data-gender="women">♀ Modèle Femme (Vert Olive & Orange)</button>
+                <button class="drawer-model-opt" data-gender="men">♂ Modèle Homme (Noir Onyx & Blanc)</button>
+              </div>
+            </div>
+
+
+
+            <!-- Trust & Delivery Info -->
+            <div class="drawer-trust-grid">
+              <div class="trust-mini-item">
+                <span class="trust-emoji">🚚</span>
+                <div>
+                  <strong>Livraison 24h/48h</strong>
+                  <p>Partout au Maroc</p>
+                </div>
+              </div>
+              <div class="trust-mini-item">
+                <span class="trust-emoji">💵</span>
+                <div>
+                  <strong>Paiement à la livraison</strong>
+                  <p>Sécurisé à réception</p>
+                </div>
+              </div>
+              <div class="trust-mini-item">
+                <span class="trust-emoji">🔄</span>
+                <div>
+                  <strong>Échange garanti</strong>
+                  <p>Sous 7 jours</p>
+                </div>
+              </div>
+              <div class="trust-mini-item">
+                <span class="trust-emoji">💬</span>
+                <div>
+                  <strong>Service Client 7j/7</strong>
+                  <p>Conseils & commandes WhatsApp</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Links -->
+            <div class="drawer-contact-block">
+              <a href="https://wa.me/212698040572" target="_blank" rel="noopener" class="contact-pill-link wa-pill">
+                <span>💬 WhatsApp : +212 6.98.04.05.72</span>
+              </a>
+              <a href="https://instagram.com/sevenscrubs" target="_blank" rel="noopener" class="contact-pill-link ig-pill">
+                <span>📸 Instagram : @sevenscrubs</span>
+              </a>
+              <button class="drawer-intro-replay-btn" id="replayIntroBtn">
+                <span>🎬 Revoir l'intro (Beyond the Uniforme)</span>
+              </button>
+            </div>
+
+          </div>
+        </aside>
       </div>
-      <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem;">
-        Nos tenues sont coupées en <strong>Sergé Lycra 4-way stretch</strong>. Si vous hésitez entre 2 tailles, optez pour la supérieure pour une liberté totale de mouvement au bloc opératoire.
-      </p>
 
-      <h4 style="font-size:0.88rem; color:#fff; font-weight:700;">Modèle Homme (Noir & Blanc)</h4>
-      <table class="size-table-compact">
-        <thead>
-          <tr><th>Taille</th><th>Stature</th><th>Poitrine</th><th>Taille</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>S</strong></td><td>165-173 cm</td><td>88-94 cm</td><td>76-82 cm</td></tr>
-          <tr><td><strong>M</strong></td><td>172-180 cm</td><td>95-102 cm</td><td>83-90 cm</td></tr>
-          <tr><td><strong>L</strong></td><td>178-186 cm</td><td>103-110 cm</td><td>91-98 cm</td></tr>
-          <tr><td><strong>XL</strong></td><td>184-192 cm</td><td>111-120 cm</td><td>99-108 cm</td></tr>
-        </tbody>
-      </table>
+      <!-- ================= SLIDE-IN CART DRAWER (BOTTOM/RIGHT) ================= -->
+      <div class="drawer-overlay" id="cartOverlay">
+        <aside class="drawer-panel drawer-bottom" id="cartPanel" role="dialog" aria-modal="true" aria-label="Votre panier">
+          <div class="drawer-header">
+            <div class="drawer-title-group">
+              <span class="drawer-cart-icon">🛍️</span>
+              <h3>Votre Panier Seven 7</h3>
+            </div>
+            <button class="drawer-close-btn" id="closeCartBtn" aria-label="Fermer le panier">✕</button>
+          </div>
 
-      <h4 style="font-size:0.88rem; color:#fff; font-weight:700; margin-top:0.75rem;">Modèle Femme (Vert Olive & Orange)</h4>
-      <table class="size-table-compact">
-        <thead>
-          <tr><th>Taille</th><th>Stature</th><th>Poitrine</th><th>Hanches</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>S</strong></td><td>156-165 cm</td><td>82-88 cm</td><td>88-94 cm</td></tr>
-          <tr><td><strong>M</strong></td><td>164-172 cm</td><td>89-96 cm</td><td>95-102 cm</td></tr>
-          <tr><td><strong>L</strong></td><td>170-178 cm</td><td>97-104 cm</td><td>103-110 cm</td></tr>
-          <tr><td><strong>XL</strong></td><td>175-182 cm</td><td>105-114 cm</td><td>111-120 cm</td></tr>
-        </tbody>
-      </table>
+          <div class="cart-items-scroll" id="cartItemsList">
+            <!-- Populated by JS -->
+          </div>
 
-      <button class="btn-order-whatsapp-main close-modal-btn" style="margin-top:1rem; height:2.8rem; font-size:0.9rem;">
-        Fermer et Choisir ma Taille
-      </button>
-    </div>
-  </div>
+          <div class="cart-bottom-checkout">
+            <div class="cart-subtotal-row">
+              <span class="subtotal-label">Sous-total :</span>
+              <span class="subtotal-amount" id="cartTotalDisplay">0 DH</span>
+            </div>
+            <p class="cart-delivery-note">Livraison 24h-48h • Paiement en espèces à la livraison</p>
+            <button class="btn-checkout-whatsapp" onclick="SEVEN_STORE.orderCartWhatsApp()">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.275-.1-.476-.15-.677.15-.2.301-.777.978-.953 1.178-.175.2-.351.226-.652.075-.3-.15-1.268-.468-2.417-1.493-.893-.797-1.497-1.782-1.673-2.083-.175-.3-.019-.462.132-.612.136-.134.301-.351.451-.527.151-.175.201-.3.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.632-.927-2.234-.244-.587-.492-.507-.677-.517-.175-.009-.376-.01-.577-.01-.201 0-.527.075-.802.376-.276.301-1.054 1.03-1.054 2.511 0 1.481 1.079 2.912 1.23 3.113.15.201 2.122 3.24 5.142 4.542.719.31 1.28.495 1.718.634.722.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.175-.143-.075-.125-.276-.201-.577-.351zM12 2C6.477 2 2 6.477 2 12c0 1.76.456 3.413 1.25 4.855L2 22l5.289-1.222C8.68 21.564 10.292 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.572 0-3.033-.443-4.275-1.213l-.307-.191-3.176.734.747-3.112-.209-.323C4.015 14.887 3.55 13.488 3.55 12c0-4.659 3.791-8.45 8.45-8.45 4.659 0 8.45 3.791 8.45 8.45 0 4.659-3.791 8.45-8.45 8.45z"/>
+              </svg>
+              <span>Valider la commande sur WhatsApp</span>
+            </button>
+          </div>
+        </aside>
+      </div>
 
-  <!-- Mobile Toast -->
-  <div class="mobile-toast" id="mobileToast" role="status"></div>
+      <!-- ================= SIZING GUIDE MODAL ================= -->
+      <div class="app-modal-overlay" id="sizesModal">
+        <div class="app-modal-dialog" role="dialog" aria-modal="true" aria-label="Guide des tailles Seven">
+          <div class="modal-header">
+            <h3>Guide des Tailles Bloc Chirurgical</h3>
+            <button class="modal-close-btn close-modal-btn" aria-label="Fermer">✕</button>
+          </div>
+          <div class="modal-body-scroll">
+            <h4 class="size-table-title">SEVEN WOMEN — Tailles S, M et L</h4>
+            <div class="table-responsive">
+              <table class="luxury-size-table">
+                <thead>
+                  <tr>
+                    <th>Mesures</th>
+                    <th>S</th>
+                    <th>M</th>
+                    <th>L</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="measure-name">Stature</td>
+                    <td>156–165 cm</td>
+                    <td>164–172 cm</td>
+                    <td>170–178 cm</td>
+                  </tr>
+                  <tr>
+                    <td class="measure-name">Tour de poitrine</td>
+                    <td>82–88 cm</td>
+                    <td>89–96 cm</td>
+                    <td>97–104 cm</td>
+                  </tr>
+                  <tr>
+                    <td class="measure-name">Tour de hanches</td>
+                    <td>88–94 cm</td>
+                    <td>95–102 cm</td>
+                    <td>103–110 cm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="size-table-caption">Coupe féminine légèrement ajustée, haut à manches courtes et pantalon évasé.</p>
+
+            <h4 class="size-table-title" style="margin-top: 1.25rem;">SEVEN MEN — Taille M standard</h4>
+            <div class="table-responsive">
+              <table class="luxury-size-table">
+                <thead>
+                  <tr>
+                    <th>Mesures</th>
+                    <th>M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="measure-name">Stature</td>
+                    <td>172–180 cm</td>
+                  </tr>
+                  <tr>
+                    <td class="measure-name">Tour de poitrine</td>
+                    <td>95–102 cm</td>
+                  </tr>
+                  <tr>
+                    <td class="measure-name">Tour de taille</td>
+                    <td>83–90 cm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="size-table-caption">Coupe masculine Regular Fit, légèrement ample, avec pantalon cargo.</p>
+
+            <button class="btn-modal-confirm close-modal-btn">Choisir ma taille</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Feedback -->
+      <div class="mobile-toast" id="mobileToast" role="status" aria-live="polite"></div>
+
+    </div> <!-- /mobile-app-card -->
+
+  </div> <!-- /luxury-presentation-wrap -->
 
   <script src="./js/app.js"></script>
 </body>

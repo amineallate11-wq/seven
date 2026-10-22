@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SEVEN 7 — Beyond the Uniforme</title>
+  <meta name="description" content="SEVEN 7 — Beyond the Uniforme. Pyjamas de bloc chirurgicaux haute performance.">
+  <link rel="icon" type="image/svg+xml" href="./images/brand/logo.svg">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /* Standalone page adaptation */
+    .intro-standalone-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--card-radius);
+      background: #12100e;
+    }
+  </style>
+</head>
+<body class="app-stage-body">
+
+  <!-- Desktop Presentation Outer Frame -->
+  <div class="luxury-presentation-wrap">
+    
+    <!-- Mobile App Container Card -->
+    <div class="mobile-app-card" id="mobileAppCard">
+      
+      <div class="intro-standalone-card" id="introContainer">
+        <img class="intro-bg-img" src="./images/brand/intro-hero.jpg" alt="SEVEN — Beyond the Uniforme Campagne">
+        <div class="intro-gradient-top"></div>
+        <div class="intro-gradient-bottom"></div>
+
+        <!-- Intro Top Header -->
+        <div class="intro-header-bar">
+          <div class="intro-logo-mark">
+            <span class="intro-equal-symbol">=</span>
+            <span class="intro-logo-text">SEVEN<span class="intro-logo-num">7</span></span>
+          </div>
+          <a href="index.html?skipIntro=1" class="intro-skip-btn" id="introSkipLink" title="Passer directement à la boutique">
+            <span>Passer</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Intro Bottom Typography & Actions -->
+        <div class="intro-body-content">
+          <span class="intro-pill-badge">ÉDITION CHIRURGICALE 2026</span>
+          <h1 class="intro-brand-title">
+            SEVEN<span class="digit-seven">7</span>
+          </h1>
+          <span class="intro-tagline">BEYOND THE UNIFORME</span>
+          <div class="intro-divider-line"></div>
+          <p class="intro-subtext">L'élégance urbaine et la haute technicité médicale réunies au cœur du bloc opératoire.</p>
+
+          <a href="index.html?skipIntro=1" class="intro-cta-button" id="introEnterLink" style="text-decoration: none;">
+            <span>DÉCOUVRIR LA COLLECTION</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <!-- Smooth auto-progress indicator -->
+          <div class="intro-progress-track" title="Progression vers la boutique">
+            <div class="intro-progress-bar" id="introProgressBar"></div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /mobile-app-card -->
+
+  </div> <!-- /luxury-presentation-wrap -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bar = document.getElementById('introProgressBar');
+      if (bar) {
+        setTimeout(() => bar.classList.add('animate'), 100);
+      }
+      
+      // Auto-transition to index.html after 3.8s
+      setTimeout(() => {
+        window.location.href = 'index.html?skipIntro=1';
+      }, 3800);
+    });
+  </script>
+</body>
+</html>
