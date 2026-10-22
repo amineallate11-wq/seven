@@ -68,6 +68,7 @@ const SEVEN_STORE = (() => {
     setupSizeCapsules();
     setupDrawersAndModals();
     setupIntroScreen();
+    initAnnouncementMarquee();
     renderCurrentProduct(true);
     renderCart();
   }
@@ -610,6 +611,64 @@ Merci de me confirmer la commande et le délai de livraison !`;
     introTimer = setTimeout(() => {
       closeIntro();
     }, 4500);
+  }
+
+  /**
+   * High-Performance Marquee Engine
+   * Uses hardware-accelerated requestAnimationFrame (translate3d).
+   * Guaranteed to scroll on iOS Safari, Chrome Mobile, Android, and in-app webviews
+   * without freezing on touch or being blocked by WebKit animation culling bugs.
+   */
+  function initAnnouncementMarquee() {
+    const track = document.querySelector('.announcement-marquee-track');
+    if (!track) return;
+
+    const firstGroup = track.querySelector('.marquee-group');
+    if (!firstGroup) return;
+
+    // Remove CSS animation so JavaScript has 100% control, eliminating all iOS WebKit animation culling bugs
+    track.style.animation = 'none';
+    track.style.webkitAnimation = 'none';
+
+    let currentX = 0;
+    let lastTimestamp = null;
+    let isPaused = false;
+    const speed = 36; // 36px/sec - smooth, readable pace
+
+    // Only allow pause on desktop with mouse pointer (never on touch devices)
+    const canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (canHover) {
+      const parentStrip = track.closest('.luxury-announcement-strip') || track;
+      parentStrip.addEventListener('mouseenter', () => { isPaused = true; });
+      parentStrip.addEventListener('mouseleave', () => { 
+        isPaused = false; 
+        lastTimestamp = null; // Prevent jump after unpausing
+      });
+    }
+
+    function animate(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = (timestamp - lastTimestamp) / 1000;
+      lastTimestamp = timestamp;
+
+      if (!isPaused) {
+        const groupWidth = firstGroup.offsetWidth;
+        if (groupWidth > 10) {
+          currentX += speed * Math.min(deltaTime, 0.1); // Cap delta to avoid jumps on tab switch
+          if (currentX >= groupWidth) {
+            currentX = currentX % groupWidth; // Seamless loop reset
+          }
+          const transformValue = `translate3d(-${currentX.toFixed(2)}px, 0, 0)`;
+          track.style.transform = transformValue;
+          track.style.webkitTransform = transformValue;
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    // Start ticker
+    requestAnimationFrame(animate);
   }
 
   return {

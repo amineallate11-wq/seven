@@ -168,19 +168,28 @@ img {
 }
 
 .announcement-marquee-track {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   width: max-content;
-  will-change: transform;
+  min-width: max-content;
+  flex-shrink: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: marqueeContinuous 24s linear infinite;
   animation: marqueeContinuous 24s linear infinite;
+  will-change: transform;
+  pointer-events: none; /* Touches on mobile will never intercept or freeze it */
 }
 
-.announcement-marquee-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .luxury-announcement-strip:hover .announcement-marquee-track {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
 }
 
 .marquee-group {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.85rem;
   padding-right: 0.85rem;
@@ -208,18 +217,25 @@ img {
   line-height: 1;
 }
 
-@keyframes marqueeContinuous {
+@-webkit-keyframes marqueeContinuous {
   0% {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
   100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .announcement-marquee-track {
-    animation-duration: 60s;
+@keyframes marqueeContinuous {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
