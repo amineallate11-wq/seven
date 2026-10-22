@@ -126,32 +126,101 @@ img {
   padding-bottom: 96px; /* Space for the sticky purchase bar */
 }
 
-/* ================= Luxury Announcement Strip (Clean, No Fake Phone Chrome) ================= */
+/* ================= Luxury Announcement Strip (Bandeau Défilant Automatique Fluide) ================= */
 .luxury-announcement-strip {
-  background: #191714;
+  background: #161412;
   color: #dfb36c;
-  padding: 0.45rem 1rem;
+  padding: 0.48rem 0;
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  border-bottom: 1px solid rgba(223, 179, 108, 0.15);
+  border-bottom: 1px solid rgba(223, 179, 108, 0.18);
   z-index: 12;
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Subtle edge fade gradient */
+.luxury-announcement-strip::before,
+.luxury-announcement-strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  z-index: 3;
+  pointer-events: none;
+}
+.luxury-announcement-strip::before {
+  left: 0;
+  background: linear-gradient(to right, #161412 0%, rgba(22, 20, 18, 0) 100%);
+}
+.luxury-announcement-strip::after {
+  right: 0;
+  background: linear-gradient(to left, #161412 0%, rgba(22, 20, 18, 0) 100%);
+}
+
+.announcement-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeContinuous 24s linear infinite;
+}
+
+.announcement-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-right: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .announcement-sparkle {
-  color: #df9f2d;
-  font-size: 0.7rem;
+  color: #e5b158;
+  font-size: 0.72rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-.announcement-text {
-  letter-spacing: 0.06em;
+.announcement-item {
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.marquee-bullet {
+  color: rgba(223, 179, 108, 0.45);
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+@keyframes marqueeContinuous {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-marquee-track {
+    animation-duration: 60s;
+  }
 }
 
 /* ================= App Header ================= */
