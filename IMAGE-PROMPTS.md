@@ -13,3 +13,9 @@ Use case: product-mockup. Extreme macro premium photographic closeup of royal co
 
 ## ugc-woman.png
 Use case: photorealistic-natural. Vertical 2:3 authentic smartphone UGC fashion portrait of an adult Moroccan female healthcare professional in fitted black short-sleeved medical scrub top with stand collar, bright pink short front zip, small pink Seven cursive left-chest embroidery and matching black cargo pants with pink drawstrings. Brown hair in messy bun, natural makeup, hospital corridor, warm daylight. Waist-up selfie-like candid angle, realistic skin texture and stitching. No overlays, interface or watermark.
+
+## campaign-woman-2.png
+Built-in image_gen. Photorealistic-natural, vertical 2:3 candid smartphone campaign photograph of an adult Moroccan woman healthcare professional wearing Seven fitted black scrubs, pink short neckline zip, pink script Seven embroidery, black cargo trousers and pink drawstrings. Standing relaxed in sunlit hospital staff lounge, holding a cup, natural smile, realistic skin and fabric. Waist-up framing. UGC-style campaign photography. No text overlays or interface.
+
+## campaign-man-2.png
+Built-in image_gen. Photorealistic-natural, vertical 2:3 candid smartphone campaign photograph of an adult Moroccan male healthcare professional wearing royal blue Seven medical scrubs with short sleeve polo collar, small white Seven script chest embroidery and white drawstrings on cargo trousers. Walking outside a bright hospital, relaxed natural smile, no sunglasses, realistic skin and detailed woven fabric, three-quarter framing. Authentic UGC-style fashion campaign. No text overlay or interface.
