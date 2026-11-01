@@ -6,3 +6,4 @@
 .wordmark{font-family:"Mr Dafoe",cursive;font-size:61px;line-height:1;letter-spacing:-2px;display:inline-block;transform:rotate(-7deg);font-weight:400}.wordmark sup{font-family:Arial,sans-serif;font-size:9px;position:relative;top:-25px;margin-left:4px;letter-spacing:0}.footer .wordmark{font-size:52px}.personalisation{width:100%;display:flex;gap:14px;align-items:center;text-align:left;padding:17px;background:#eee8e3;border-radius:9px;margin:18px 0}.personalisation b{font-size:12px}.personalisation small{display:block;font-size:10px;color:#766e68;margin-top:5px}@media(max-width:700px){.wordmark{font-size:49px}.wordmark sup{top:-20px}}
 .story-viewer{color:white}.story-viewer .story-header{color:white;text-shadow:0 1px 5px #0008}
 @media(min-width:701px){.hero{background-position:center top}}
+.gallery-main img{object-fit:contain;object-position:center center}.gallery-main{background:#eeeae7}
