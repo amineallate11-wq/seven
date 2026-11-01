@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <!-- Stylized Seven wordmark -->
+  <text x="12" y="44" font-family="'Plus Jakarta Sans', 'Outfit', 'Montserrat', -apple-system, sans-serif" font-size="34" font-weight="900" font-style="italic" letter-spacing="-0.5" fill="#FFFFFF">SEVEN</text>
+  <!-- Iconic Inverted Triangle "7" emblem -->
+  <g transform="translate(150, 10)">
+    <!-- 7 crest shape -->
+    <path d="M 5 6 L 45 6 L 45 16 L 27 48 L 13 48 L 30 18 L 5 18 Z" fill="#FFFFFF"/>
+    <circle cx="56" cy="46" r="3.5" fill="#FF5E13"/>
+  </g>
+</svg>
