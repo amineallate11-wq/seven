@@ -20,3 +20,8 @@
 .feature h3{margin-top:0}.check-list li:before{content:none}
 
 .promo-close{display:grid;place-items:center;padding:0;line-height:0}.promo-close svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+/* WhatsApp green makes every ordering action easy to spot. */
+:root{--order-green:#25d366;--order-green-hover:#1fbd5b;--order-ink:#082d18}
+.btn[data-action="buy"],.btn[data-action="checkout-next"],#checkout-form .btn[type="submit"],#promo-form .btn[type="submit"],.btn[href^="https://wa.me/"],.btn[href="#choisir"]{background:var(--order-green);color:var(--order-ink);border-color:var(--order-green)}
+.btn[data-action="buy"]:hover,.btn[data-action="checkout-next"]:hover,#checkout-form .btn[type="submit"]:hover,#promo-form .btn[type="submit"]:hover,.btn[href^="https://wa.me/"]:hover,.btn[href="#choisir"]:hover{background:var(--order-green-hover);color:var(--order-ink);border-color:var(--order-green-hover)}
